@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f2ea" />
+  <meta name="description" content="JerseyCTF VI forensics walkthrough: decode a satellite signal using Base64 and a Caesar shift." />
+  <meta property="og:title" content="Recovered Signal File | JerseyCTF VI Writeup" />
+  <meta property="og:description" content="A two-step decoding walkthrough for a satellite signal hidden in signal.log." />
+  <meta property="og:type" content="article" />
+  <title>Recovered Signal File | JerseyCTF VI Writeup | Daniel Peng</title>
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../styles.css?v=jerseyctf-writeups" />
+  <script src="../../../../script.js?v=20261021a" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="https://codewithdaniel1.github.io/index.html" aria-label="Daniel Peng, home"><span class="brand-mark">dp<span class="brand-period">.</span></span><span class="brand-name">Daniel Peng</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="https://codewithdaniel1.github.io/index.html">Home</a><a href="https://codewithdaniel1.github.io/project.html">Project</a><a href="https://codewithdaniel1.github.io/research.html">Research</a><a href="https://codewithdaniel1.github.io/ctf.html">CTF</a></nav>
+    </div>
+  </header>
+  <main class="inner-main wrap prose" id="main">
+    <a class="back-link" href="https://codewithdaniel1.github.io/competitions/jerseyctf-vi.html#writeups" data-back-to-ctf>← Back to JerseyCTF VI writeups</a>
+    <header class="inner-hero">
+      <p class="section-index">CTF WRITEUP / JERSEYCTF VI</p>
+      <div>
+        <h1>Recovered Signal File<span class="period">.</span></h1>
+        <p class="lead">A short encoded transmission resolves into a flag after two simple transformations: Base64 decoding and a Caesar shift.</p>
+        <div class="article-meta"><span>Digital forensics · Encoding</span><span>JerseyCTF VI</span><span>April 18–19, 2026</span></div>
+      </div>
+    </header>
+
+    <section class="inner-section" id="challenge" aria-labelledby="challenge-title">
+      <h2 id="challenge-title">The challenge</h2>
+      <div class="section-content">
+        <p>This signal was recovered from a Cold War-era satellite. The encryption doesn't appear very advanced, but it was enough to avoid detection at the time. With the right approach, the message should be recoverable.</p>
+        <p>Flag format for this challenge is <code>flag{}</code>.</p>
+        <div class="writeup-downloads">
+          <a class="under-link" href="assets/original/signal.log" download>Original challenge file · signal.log</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="decode" aria-labelledby="decode-title">
+      <h2 id="decode-title">Decode the transmission</h2>
+      <div class="section-content">
+        <p>Decode the Base64 string to expose the intermediate text:</p>
+        <pre><code>echo 'aW9kant2ZHdob29sd2hfdmxqcWRvX2doZnJnaGd9' | base64 -d</code></pre>
+        <pre><code>iodj{vdwhoolwh_vljqdo_ghfrghg}</code></pre>
+        <p>The result still looks transformed. Shifting each letter backward by three positions gives a readable flag. The substitution wraps around the alphabet, so <code>d</code> becomes <code>a</code>; punctuation and underscores remain unchanged.</p>
+        <pre><code>echo 'iodj{vdwhoolwh_vljqdo_ghfrghg}' | tr 'A-Za-z' 'X-ZA-Wx-za-w'</code></pre>
+        <pre><code>flag{satellite_signal_decoded}</code></pre>
+        <div class="writeup-downloads">
+          <a class="under-link" href="assets/recovered/signal-base64-decoded.txt" download>Recovered intermediate text</a>
+          <a class="under-link" href="assets/recovered/signal-flag.txt" download>Recovered flag file</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="takeaway" aria-labelledby="takeaway-title">
+      <h2 id="takeaway-title">Takeaway</h2>
+      <div class="section-content">
+        <p>The transmission uses two layers: Base64 followed by a Caesar substitution with a shift of three. Checking the output after each step makes the transformations easy to verify.</p>
+        <pre class="writeup-flag"><code>flag{satellite_signal_decoded}</code></pre>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>Daniel Peng · New York</span><a href="https://codewithdaniel1.github.io/competitions/jerseyctf-vi.html#writeups" data-back-to-ctf>← Back to JerseyCTF VI writeups</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talk: Meridian Pictures & The Halcyon Group — CipherWiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.talk-notice {
+  background: #f0f6fb;
+  border: 1px solid #7ab4d8;
+  border-radius: 2px;
+  padding: 9px 14px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: #333;
+}
+.talk-notice a { color: #3366cc; }
+.talk-section { margin-bottom: 32px; }
+.talk-section-head {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3px;
+  margin-bottom: 14px;
+}
+.post { margin-bottom: 10px; }
+.post-meta {
+  font-size: 12px;
+  color: #72777d;
+  margin-bottom: 3px;
+  font-family: 'Share Tech Mono', monospace;
+}
+.post-meta .username { color: #3366cc; font-weight: 700; }
+.post-meta .timestamp { color: #999; font-size: 11px; margin-left: 6px; }
+.post-body { font-size: 13.5px; line-height: 1.65; color: #202122; }
+.post-body p { margin-bottom: 6px; }
+.indent-1 { margin-left: 24px; border-left: 2px solid #e8e8e8; padding-left: 12px; }
+.indent-2 { margin-left: 48px; border-left: 2px solid #e8e8e8; padding-left: 12px; }
+.indent-3 { margin-left: 72px; border-left: 2px solid #e8e8e8; padding-left: 12px; }
+.indent-4 { margin-left: 96px; border-left: 2px solid #e8e8e8; padding-left: 12px; }
+.post-divider { border: none; border-top: 1px dashed #e0e0e0; margin: 14px 0; }
+.agent-post .post-body { color: #1a3a1a; }
+.bot-post .post-body { color: #555; }
+.truthteller-post .post-body { color: #5a0000; }
+.ctf-placeholder {
+  background: #fffbe6;
+  border: 1px dashed #c8a800;
+  border-radius: 2px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-family: 'Share Tech Mono', monospace;
+  color: #7a6000;
+  display: inline-block;
+  margin-top: 4px;
+}
+.mod-note {
+  font-size: 11.5px;
+  color: #888;
+  font-style: italic;
+  padding: 4px 8px;
+  background: #f8f8f8;
+  border-left: 2px solid #ccc;
+  margin: 8px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="../index.html"><strong>CipherWiki</strong></a>
+    <a href="#">Create account</a>
+    <a href="#">Log in</a>
+  </div>
+  <span>The Unofficial CIPHER Franchise Encyclopedia &mdash; 47,203 articles</span>
+</div>
+<div class="site-header">
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <div class="logo-gem">◆</div>
+      <div>
+        <div class="logo-title"><a href="../index.html" style="color:#000;text-decoration:none">CipherWiki</a></div>
+        <div class="logo-subtitle">The Unofficial CIPHER Franchise Encyclopedia</div>
+      </div>
+    </div>
+    <div class="header-search"><input type="text" placeholder="Search CipherWiki…"></div>
+  </div>
+  <div class="page-tabs" style="max-width:1180px;margin:0 auto;">
+    <a class="tab" href="../production/index.html">Article</a>
+    <a class="tab active" href="#">Talk</a>
+    <a class="tab" href="#">Edit</a>
+    <a class="tab" href="#">History</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <nav class="left-nav">
+    <h4>Wiki</h4>
+    <ul>
+      <li><a href="../index.html">Main Page</a></li>
+      <li><a href="../films/index.html">All Films</a></li>
+      <li><a href="../characters/ward.html">Characters</a></li>
+      <li><a href="../org/hexon.html">HEXON</a></li>
+      <li><a href="../org/sentinel.html">Sentinel</a></li>
+      <li><a href="../production/index.html">Meridian &amp; Halcyon</a></li>
+    </ul>
+    <h4>Actors</h4>
+    <ul>
+      <li><a href="../actors/cavender.html">Hugh Cavender</a></li>
+      <li><a href="../actors/mace.html">Roland Mace</a></li>
+      <li><a href="../actors/bauer.html">Stefan Bauer</a></li>
+      <li><a href="../actors/calloway.html">James Calloway</a></li>
+      <li><a href="../actors/obi.html">Marcus Obi</a></li>
+    </ul>
+    <h4>Films</h4>
+    <ul>
+      <li><a href="../films/f01.html">Shadow and Steel</a></li>
+      <li><a href="../films/f02.html">The Lisbon Frequency</a></li>
+      <li><a href="../films/f03.html">Agent Alone</a></li>
+      <li><a href="../films/f04.html">Crimson Meridian</a></li>
+      <li><a href="../films/f05.html">The Ivory Gambit</a></li>
+      <li><a href="../films/f06.html">Dead Reckoning</a></li>
+      <li><a href="../films/f07.html">Shallow Graves</a></li>
+      <li><a href="../films/f08.html">After the Wall</a></li>
+      <li><a href="../films/f09.html">Zero Meridian</a></li>
+      <li><a href="../films/f10.html">Blacksite</a></li>
+      <li><a href="../films/f11.html">The Sovereign Gamble</a></li>
+      <li><a href="../films/f12.html">Pale Fire</a></li>
+      <li><a href="../films/f13.html">No Such Agency</a></li>
+      <li><a href="../films/f14.html">Fracture Point</a></li>
+      <li><a href="../films/f15.html">The Last Directorate</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+
+    <div class="page-title">Talk: Meridian Pictures <span class="disambig">and The Halcyon Group</span></div>
+
+    <div class="talk-notice">
+      This is the talk page for discussing improvements to the <strong>Meridian Pictures and The Halcyon Group</strong> article.
+      This is <em>not</em> a forum for general discussion about the subject.
+      Please sign your posts with four tildes (<code>~~~~</code>).
+      &nbsp;|&nbsp; <a href="../production/index.html">Article</a> &nbsp;|&nbsp; <a href="#">Archive 1</a>
+    </div>
+
+    <!-- ══ SECTION 1 ══ -->
+    <div class="talk-section">
+      <div class="talk-section-head">Should this be two separate articles?</div>
+
+      <div class="post">
+        <div class="post-meta"><span class="username">QuietOfficeArchivist</span><span class="timestamp">3 February 2024, 11:04 (UTC)</span></div>
+        <div class="post-body"><p>I've been going back and forth on this. The current combined article makes sense given how inseparable the two entities are in practice, but it does make it harder to link to one or the other individually. Has there been previous discussion about splitting them?</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">ProductionGeek_UK</span><span class="timestamp">3 February 2024, 11:52 (UTC)</span></div>
+        <div class="post-body"><p>There was a thread about this on the old forum about four years ago and the consensus was to keep them together precisely because we know so little about Halcyon independently. A standalone Halcyon article would be two paragraphs of "we don't know" and a list of unanswered questions. At least combined with Meridian it has some substance.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">QuietOfficeArchivist</span><span class="timestamp">3 February 2024, 12:14 (UTC)</span></div>
+        <div class="post-body"><p>Fair point. Though arguably a stub article for Halcyon that's honest about the absence of information is more accurate than burying it here. The opacity is itself the most notable thing about them.</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">CinemaHistoryBuff</span><span class="timestamp">3 February 2024, 12:58 (UTC)</span></div>
+        <div class="post-body"><p>Keep them together for now. If someone turns up verifiable information about Halcyon's principals or structure that warrants a full article, split them then. Until that day — and I'm not holding my breath — combined is fine.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">Pellucid_M</span><span class="timestamp">3 February 2024, 13:22 (UTC)</span></div>
+        <div class="post-body"><p>The two entities are more unified than separate. Treating them as one article is, in this case, the more accurate representation of reality.</p></div>
+      </div>
+    </div>
+
+    <!-- ══ SECTION 2 ══ -->
+    <div class="talk-section">
+      <div class="talk-section-head">The Halcyon Group — who actually owns it?</div>
+
+      <div class="post">
+        <div class="post-meta"><span class="username">ProductionGeek_UK</span><span class="timestamp">19 January 2024, 14:33 (UTC)</span></div>
+        <div class="post-body"><p>I've spent the better part of a weekend trying to trace the Halcyon Group's beneficial ownership through the Jersey subsidiary and I've hit a wall. The Jersey filing names a nominee director service as the registered agent, which is completely legal but also completely opaque. The Cayman subsidiary mentioned in the 2019 Companies House filing is listed as dormant, which could mean anything. Has anyone had more luck?</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">CinemaHistoryBuff</span><span class="timestamp">19 January 2024, 15:11 (UTC)</span></div>
+        <div class="post-body"><p>I tried the same thing about two years ago and got nowhere. The St. James's solicitor's address is a dead end — they act for dozens of holding companies and don't disclose client relationships. I even tried cross-referencing the Jersey filing dates with known British film financing entities of the 1960s and found nothing that connected.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">LiterarySpyFan</span><span class="timestamp">19 January 2024, 15:44 (UTC)</span></div>
+        <div class="post-body"><p>At some point we have to accept that either the Halcyon Group is genuinely obscure for mundane reasons — a wealthy private individual who simply wanted anonymity — or it's obscure for less mundane reasons that we won't find by looking at Companies House filings. Either way, we're not going to find it this way.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">ProductionGeek_UK</span><span class="timestamp">19 January 2024, 16:02 (UTC)</span></div>
+        <div class="post-body"><p>I know. It just bothers me. A production entity with this much commercial activity over sixty years should leave more of a trace.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">greyarchive</span><span class="timestamp">19 January 2024, 16:18 (UTC)</span></div>
+        <div class="post-body"><p>Some entities are structured specifically to leave no trace. This is not unusual in private finance. It is, however, worth noting that the absence of a trace is itself a form of information.</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">ProductionGeek_UK</span><span class="timestamp">19 January 2024, 16:34 (UTC)</span></div>
+        <div class="post-body"><p>What kind of information?</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">greyarchive</span><span class="timestamp">19 January 2024, 16:36 (UTC)</span></div>
+        <div class="post-body"><p>The kind that tells you what sort of entity would require this level of structural invisibility. Most private film financiers want some credit. They want the industry to know they exist. Halcyon has never sought that. In sixty years, not once.</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">LiterarySpyFan</span><span class="timestamp">19 January 2024, 16:55 (UTC)</span></div>
+        <div class="post-body"><p>You're making the same argument the conspiracy theorists make, just more elegantly.</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">greyarchive</span><span class="timestamp">19 January 2024, 16:57 (UTC)</span></div>
+        <div class="post-body"><p>I am making an observation about corporate behaviour. What you do with it is your own business.</p></div>
+      </div>
+    </div>
+
+    <!-- ══ SECTION 3 ══ -->
+    <div class="talk-section">
+      <div class="talk-section-head">Edmund Hale — the Screen International interview</div>
+
+      <div class="post">
+        <div class="post-meta"><span class="username">SixtyYearsReader</span><span class="timestamp">7 March 2024, 09:44 (UTC)</span></div>
+        <div class="post-body"><p>The article references the 1988 Screen International profile where Hale described the Halcyon relationship as "straightforward and mutually beneficial." Does anyone have the full interview? I've been trying to find it through the BFI press archive and it doesn't appear to be digitised. I'd like to check whether he said anything else about Halcyon in that interview that didn't make the article.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">CinemaHistoryBuff</span><span class="timestamp">7 March 2024, 10:28 (UTC)</span></div>
+        <div class="post-body"><p>I read it once at the BFI reading room — it's in their physical periodicals archive. From memory, the Halcyon question came up once and he shut it down very cleanly. The interviewer apparently tried twice and the second time Hale simply changed the subject and the interviewer didn't pursue it. The published piece makes it look more diplomatic than it apparently was in the room.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">SixtyYearsReader</span><span class="timestamp">7 March 2024, 11:02 (UTC)</span></div>
+        <div class="post-body"><p>That's interesting. "Shut it down very cleanly" is a different thing from "declined to elaborate." Worth a visit to the BFI. Do you remember if the interviewer was named?</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">CinemaHistoryBuff</span><span class="timestamp">7 March 2024, 11:34 (UTC)</span></div>
+        <div class="post-body"><p>I don't, I'm afraid. It was a while ago. The piece was a career overview, not specifically about CIPHER — Halcyon came up almost as an aside.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">T_Ashford_1952</span><span class="timestamp">7 March 2024, 11:48 (UTC)</span></div>
+        <div class="post-body"><p>Edmund Hale was a man who understood exactly what he could and could not say, and where those boundaries were. His management of that interview is consistent with someone operating under a specific set of constraints rather than someone exercising personal discretion.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">SixtyYearsReader</span><span class="timestamp">7 March 2024, 12:04 (UTC)</span></div>
+        <div class="post-body"><p>Constraints of what kind?</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">T_Ashford_1952</span><span class="timestamp">7 March 2024, 12:06 (UTC)</span></div>
+        <div class="post-body"><p>Contractual ones, presumably.</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">SixtyYearsReader</span><span class="timestamp">7 March 2024, 12:22 (UTC)</span></div>
+        <div class="post-body"><p>Presumably. Yes.</p></div>
+      </div>
+    </div>
+
+    <!-- ══ SECTION 4 ══ -->
+    <div class="talk-section">
+      <div class="talk-section-head">Clara Nwosu — should she have her own article?</div>
+
+      <div class="post">
+        <div class="post-meta"><span class="username">DeepCutCinema</span><span class="timestamp">14 February 2024, 17:08 (UTC)</span></div>
+        <div class="post-body"><p>Clara Nwosu has directed three CIPHER films, all of them critically and commercially successful, and is currently the longest-tenured director in the franchise's history. She also directed two well-regarded non-CIPHER features before joining the series. Why does she not have her own article on this wiki? The directors are consistently underrepresented here compared to the actors and characters.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">QuietOfficeArchivist</span><span class="timestamp">14 February 2024, 17:55 (UTC)</span></div>
+        <div class="post-body"><p>Entirely agree. Nwosu, Holt, Forsythe, Ashmore — all of them deserve proper articles. If anyone wants to start drafts I'd be happy to help with sourcing.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">LastDirectorateFan</span><span class="timestamp">14 February 2024, 18:44 (UTC)</span></div>
+        <div class="post-body"><p>Nwosu is the obvious starting point. Three films, two of which are in the franchise's all-time top five by box office, one of which won three BAFTAs. Her work has a consistent visual signature across all three films — the use of natural light, the long takes, the tendency to frame Ward from behind at moments of decision — that nobody has written about properly.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">DeepCutCinema</span><span class="timestamp">14 February 2024, 19:22 (UTC)</span></div>
+        <div class="post-body"><p>The framing-from-behind point is interesting. Ward's back is the most important image in Fracture Point. Nwosu uses it about six times in that film. It's always at a moment when he's choosing something. The audience is with him, not watching him. That's a deliberate technique and it's entirely her contribution.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">MaceIsKing</span><span class="timestamp">14 February 2024, 20:01 (UTC)</span></div>
+        <div class="post-body"><p>I'll draft a Nwosu stub if nobody beats me to it. It's long overdue.</p></div>
+      </div>
+    </div>
+
+    <!-- ══ SECTION 5 ══ -->
+    <div class="talk-section">
+      <div class="talk-section-head">The kingfisher name — too on the nose?</div>
+
+      <div class="post">
+        <div class="post-meta"><span class="username">LiterarySpyFan</span><span class="timestamp">28 January 2024, 10:14 (UTC)</span></div>
+        <div class="post-body"><p>The article notes that <em>halcyon</em> means kingfisher in Greek and gestures at the bird's hunting method as a potential metaphor. I want to put this more plainly: a kingfisher watches from concealment, waits in perfect stillness, and strikes at the precise moment the target is unaware. For a film production company that finances spy films and refuses to identify its owners, this is either an extraordinary coincidence or someone with a sense of humour chose that name very deliberately.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">SkepticalCipher</span><span class="timestamp">28 January 2024, 10:58 (UTC)</span></div>
+        <div class="post-body"><p>Or someone chose a pleasant-sounding word associated with calm and prosperity — which is what "halcyon days" means in common usage — and didn't particularly intend a deeper meaning. Sometimes a name is just a name.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">LiterarySpyFan</span><span class="timestamp">28 January 2024, 11:24 (UTC)</span></div>
+        <div class="post-body"><p>That's a reasonable position. I find it less convincing given everything else that's strange about this company, but I take the point.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">CryptoHistoryFan</span><span class="timestamp">28 January 2024, 11:51 (UTC)</span></div>
+        <div class="post-body"><p>The kingfisher is also notable for diving into water — crossing from one medium to another — to reach its target. If you wanted a symbol for an organisation that operates across the boundary between public life and concealed activity, you could do worse.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">SkepticalCipher</span><span class="timestamp">28 January 2024, 12:19 (UTC)</span></div>
+        <div class="post-body"><p>We are now doing semiotics on the name of a film production company. I want to note for the record that I think this is fine and also completely insane.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">Pellucid_M</span><span class="timestamp">28 January 2024, 12:34 (UTC)</span></div>
+        <div class="post-body"><p>The name was chosen deliberately. I have no doubt about that. Whether the deliberateness was aesthetic or operational is a separate question.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">LiterarySpyFan</span><span class="timestamp">28 January 2024, 12:51 (UTC)</span></div>
+        <div class="post-body"><p>Pellucid, when you say "operational" — what exactly do you mean by that?</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">Pellucid_M</span><span class="timestamp">28 January 2024, 12:53 (UTC)</span></div>
+        <div class="post-body"><p>I mean that some names are chosen because they communicate something to a specific audience while meaning nothing to everyone else. A signal, in other words. Hidden in plain sight.</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">LiterarySpyFan</span><span class="timestamp">28 January 2024, 13:08 (UTC)</span></div>
+        <div class="post-body"><p>A signal to whom?</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">Pellucid_M</span><span class="timestamp">28 January 2024, 13:10 (UTC)</span></div>
+        <div class="post-body"><p>To anyone who knows what to look for.</p></div>
+      </div>
+    </div>
+
+    <!-- ══ SECTION 6 ══ -->
+    <div class="talk-section">
+      <div class="talk-section-head">Diana Hale-Forsythe — the dynastic angle</div>
+
+      <div class="post">
+        <div class="post-meta"><span class="username">ViennaNights_84</span><span class="timestamp">22 February 2024, 16:04 (UTC)</span></div>
+        <div class="post-body"><p>Something the article touches on but doesn't develop — Diana Hale-Forsythe is both the daughter of one founder and the daughter-in-law of the other. She married Thomas Forsythe, Gerald's son. The two founding families are now literally one family. The franchise that is about a man with no family ties is controlled by an entity defined by family ties. I find this fascinating and slightly ironic.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">CriticalTheoryWatcher</span><span class="timestamp">22 February 2024, 16:52 (UTC)</span></div>
+        <div class="post-body"><p>It's a very British arrangement. The postwar independent film industry was heavily networked through exactly these kinds of overlapping personal connections. What makes it slightly unusual is that the Meridian arrangement has held for six decades without the kind of internal fracture that usually breaks up family-controlled creative businesses.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">QuietOfficeArchivist</span><span class="timestamp">22 February 2024, 17:34 (UTC)</span></div>
+        <div class="post-body"><p>Diana Hale-Forsythe is an interesting figure who doesn't get nearly enough attention. Her decisions — Calloway, Nwosu, Obi — have been consistently better than the industry expected. She clearly has a sophisticated understanding of what the franchise is and what it needs.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">DeepCutCinema</span><span class="timestamp">22 February 2024, 18:11 (UTC)</span></div>
+        <div class="post-body"><p>She also maintained the Halcyon relationship without any apparent renegotiation when she took over in 2005. Whatever her father's arrangement with them was, she inherited it intact and apparently without difficulty. Which either means the terms are very straightforward or she knew what she was inheriting very well.</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">T_Ashford_1952</span><span class="timestamp">22 February 2024, 18:29 (UTC)</span></div>
+        <div class="post-body"><p>Arrangements of that kind are typically documented in ways that survive the individuals who made them. The continuity is by design, not inheritance.</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">DeepCutCinema</span><span class="timestamp">22 February 2024, 18:48 (UTC)</span></div>
+        <div class="post-body"><p>That's an interesting way to put it. You mean the Halcyon arrangement isn't personal — it's institutional?</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">T_Ashford_1952</span><span class="timestamp">22 February 2024, 18:50 (UTC)</span></div>
+        <div class="post-body"><p>I mean that Meridian Pictures is a delivery mechanism. It has always been a delivery mechanism. Who sits in the chair is, from a certain perspective, not the primary consideration.</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">ViennaNights_84</span><span class="timestamp">22 February 2024, 19:06 (UTC)</span></div>
+        <div class="post-body"><p>A delivery mechanism for what, exactly?</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">T_Ashford_1952</span><span class="timestamp">22 February 2024, 19:08 (UTC)</span></div>
+        <div class="post-body"><p>Films. Obviously.</p></div>
+      </div>
+    </div>
+
+    <!-- ══ SECTION 7 — TRUTH TELLER ══ -->
+    <div class="talk-section">
+      <div class="talk-section-head">The Halcyon Group is a government front — evidence inside</div>
+
+      <div class="post">
+        <div class="post-meta"><span class="username">LAMPREY_KNOWS</span><span class="timestamp">11 November 2023, 01:38 (UTC)</span></div>
+        <div class="post-body"><p>I know what this looks like. I've been called a crank before. But I've spent eighteen months on this and I need to put it somewhere before I lose the thread. The Halcyon Group is not a film production company. It is a front for a British intelligence operation. The CIPHER films are not inspired by real events — they ARE real events, lightly disguised. The technical accuracy isn't research. The equipment, the locations, the operational methods — they're real because whoever is behind Halcyon had direct access to classified material. I have traced the Jersey subsidiary to a holding structure used by at least two other confirmed government front companies in the 1970s. I can share documentation.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">WardForever</span><span class="timestamp">11 November 2023, 01:39 (UTC)</span></div>
+        <div class="post-body"><p>The Jersey subsidiary structure is standard for British independent film companies of the 1960s. This is well documented. There is nothing unusual about it.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">FilmBuffUK</span><span class="timestamp">11 November 2023, 01:39 (UTC)</span></div>
+        <div class="post-body"><p>mate it's a film company. they make films. that's what film companies do.</p></div>
+      </div>
+
+      <div class="mod-note">Thread locked. User LAMPREY_KNOWS warned for posting unverifiable claims. Further posts of this nature will result in a block. Sourced contributions welcome through normal channels. — VaelArchiveMod</div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">ProductionGeek_UK</span><span class="timestamp">11 November 2023, 09:22 (UTC)</span></div>
+        <div class="post-body"><p>I'm going to be that person: the username. LAMPREY. That's a very specific choice for someone posting conspiracy theories about a spy film franchise. Either it's a reference to something they know or it's a very dedicated troll.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">CinemaHistoryBuff</span><span class="timestamp">11 November 2023, 09:58 (UTC)</span></div>
+        <div class="post-body"><p>Or they just like lampreys. Let's not encourage this.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">BBSHistorian</span><span class="timestamp">11 November 2023, 10:34 (UTC)</span></div>
+        <div class="post-body"><p>LAMPREY appears in the classified document that someone posted on the Sentinel talk page about six months ago as well. The one that got removed. Someone is using it as a recurring reference and I'd like to know what it refers to.</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">CinemaHistoryBuff</span><span class="timestamp">11 November 2023, 11:02 (UTC)</span></div>
+        <div class="post-body"><p>What classified document? I didn't see that.</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">BBSHistorian</span><span class="timestamp">11 November 2023, 11:19 (UTC)</span></div>
+        <div class="post-body"><p>It was removed fairly quickly. Someone posted what appeared to be a scanned memo referencing a file called LAMPREY in connection with the Halcyon Group. It was up for about an hour before the moderators took it down. I saved a screenshot but I'm not going to post it here for obvious reasons.</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">greyarchive</span><span class="timestamp">11 November 2023, 11:33 (UTC)</span></div>
+        <div class="post-body"><p>If you have that screenshot. Keep it somewhere safe.</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">BBSHistorian</span><span class="timestamp">11 November 2023, 11:48 (UTC)</span></div>
+        <div class="post-body"><p>Already have. And now I'm wondering why a regular wiki contributor is telling me to preserve evidence about a possible intelligence front company. Who are you, greyarchive?</p></div>
+      </div>
+
+      <div class="post indent-4">
+        <div class="post-meta"><span class="username">greyarchive</span><span class="timestamp">11 November 2023, 11:50 (UTC)</span></div>
+        <div class="post-body"><p>A regular wiki contributor who prefers that interesting things not disappear.</p></div>
+      </div>
+    </div>
+
+    <!-- ══ SECTION 8 ══ -->
+    <div class="talk-section">
+      <div class="talk-section-head">Cayman subsidiary — what does "dormant" actually mean here?</div>
+
+      <div class="post">
+        <div class="post-meta"><span class="username">CryptoHistoryFan</span><span class="timestamp">5 March 2024, 13:02 (UTC)</span></div>
+        <div class="post-body"><p>The article mentions a Cayman Islands subsidiary described as dormant in a 2019 Companies House filing. I want to flag that "dormant" in this context has a specific legal meaning that doesn't necessarily mean "inactive." A dormant company can still hold assets, intellectual property, or rights — it simply means it hasn't conducted any "significant accounting transactions" in the relevant period. A company holding a long-term financing arrangement might legitimately file as dormant while still being operationally significant to whatever it's connected to.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">ProductionGeek_UK</span><span class="timestamp">5 March 2024, 13:48 (UTC)</span></div>
+        <div class="post-body"><p>That's a useful clarification. So the Cayman subsidiary being dormant doesn't tell us it's inactive — just that it hasn't transacted recently in a recordable way. Which is consistent with it being a shell holding entity of some kind.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">CryptoHistoryFan</span><span class="timestamp">5 March 2024, 14:22 (UTC)</span></div>
+        <div class="post-body"><p>Exactly. And a dormant subsidiary that's been maintained for decades without being dissolved is interesting. If it genuinely served no purpose you'd wind it up. Maintaining it costs money and administrative effort. Someone thinks it still has a function.</p></div>
+      </div>
+
+      <div class="post indent-1">
+        <div class="post-meta"><span class="username">T_Ashford_1952</span><span class="timestamp">5 March 2024, 14:41 (UTC)</span></div>
+        <div class="post-body"><p>There are structures which are maintained not because they are currently active but because they may need to be activated. A dormant company is a door that has not yet been opened. This does not mean no one holds the key.</p></div>
+      </div>
+
+      <div class="post indent-2">
+        <div class="post-meta"><span class="username">CryptoHistoryFan</span><span class="timestamp">5 March 2024, 15:04 (UTC)</span></div>
+        <div class="post-body"><p>T_Ashford you have a way of saying things that sounds entirely reasonable and leaves me feeling vaguely unsettled. I appreciate it and I'm not sure I should.</p></div>
+      </div>
+
+      <div class="post indent-3">
+        <div class="post-meta"><span class="username">T_Ashford_1952</span><span class="timestamp">5 March 2024, 15:06 (UTC)</span></div>
+        <div class="post-body"><p>That is a reasonable response.</p></div>
+      </div>
+    </div>
+
+  </div><!-- /main-content -->
+
+  <aside class="right-sidebar">
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Navigation</div>
+      <ul>
+        <li><a href="../index.html">Main Page</a></li>
+        <li><a href="../films/index.html">All Films</a></li>
+        <li><a href="../org/sentinel.html">Sentinel</a></li>
+        <li><a href="../org/hexon.html">HEXON</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Talk page guide</div>
+      <div class="sidebar-note">Sign posts with four tildes (~~~~).<br><br>Keep discussion relevant to the article.<br><br>Personal attacks will be removed.</div>
+    </div>
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Notice</div>
+      <div class="sidebar-note">The LAMPREY_KNOWS thread has been locked. Do not attempt to reopen it without sourced material. — Admin</div>
+    </div>
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Related talk pages</div>
+      <ul>
+        <li><a href="org_sentinel.html">Sentinel talk</a></li>
+        <li><a href="org_hexon.html">HEXON talk</a></li>
+        <li><a href="f09.html">Zero Meridian talk</a></li>
+        <li><a href="f02.html">Lisbon Frequency talk</a></li>
+      </ul>
+    </div>
+	<div class="sidebar-box">
+    <div class="sidebar-box-title">Active Users</div>
+    <ul>
+      <li>GlassEelFan</li>
+      <li>WardWatcher_99</li>
+      <li>Morthwaite</li>
+      <li>BrumbyFilm</li>
+      <li>ClaireD1965</li>
+      <li>IsabellaKT</li>
+      <li>VaelArchiveMod</li>
+	  <li>Mortedamos</li>
+	  <li>SecureKomodo</li>
+	  <li>nullspace</li>
+	  <li>KashMunee</li>
+	  <li>n3tl0kr</li>
+	  <li>JohnAllen</li>
+	  <li>Kybele</li>
+	  <li>FredMayRulz</li>
+	  <li>Ph1shH00k</li>	  
+    </ul>
+  </div>
+  </aside>
+
+</div><!-- /page-wrap -->
+
+<div class="wiki-footer">
+  CipherWiki is an unofficial fan encyclopaedia not affiliated with Meridian Pictures or the Halcyon Group. &middot;
+  <a href="#">Privacy</a> &middot; <a href="#">About</a> &middot; <a href="#">Disclaimers</a>
+</div>
+</body>
+</html>

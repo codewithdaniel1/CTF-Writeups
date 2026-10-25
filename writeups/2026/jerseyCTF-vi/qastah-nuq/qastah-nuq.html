@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f2ea" />
+  <meta name="description" content="JerseyCTF VI network forensics walkthrough: find and decode the flag in an HTTP response inside a PCAP." />
+  <meta property="og:title" content="qaStaH nuq | JerseyCTF VI Writeup" />
+  <meta property="og:description" content="Inspect a network capture, locate an HTTP response, and decode its Base64 payload." />
+  <meta property="og:type" content="article" />
+  <title>qaStaH nuq | JerseyCTF VI Writeup | Daniel Peng</title>
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../styles.css?v=jerseyctf-writeups" />
+  <script src="../../../../script.js?v=20261021a" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="https://codewithdaniel1.github.io/index.html" aria-label="Daniel Peng, home"><span class="brand-mark">dp<span class="brand-period">.</span></span><span class="brand-name">Daniel Peng</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="https://codewithdaniel1.github.io/index.html">Home</a><a href="https://codewithdaniel1.github.io/project.html">Project</a><a href="https://codewithdaniel1.github.io/research.html">Research</a><a href="https://codewithdaniel1.github.io/ctf.html">CTF</a></nav>
+    </div>
+  </header>
+  <main class="inner-main wrap prose" id="main">
+    <a class="back-link" href="https://codewithdaniel1.github.io/competitions/jerseyctf-vi.html#writeups" data-back-to-ctf>← Back to JerseyCTF VI writeups</a>
+    <header class="inner-hero">
+      <p class="section-index">CTF WRITEUP / JERSEYCTF VI</p>
+      <div>
+        <h1>qaStaH nuq<span class="period">.</span></h1>
+        <p class="lead">Filter a noisy packet capture down to one HTTP exchange, then decode the response body to recover the flag.</p>
+        <div class="article-meta"><span>Digital forensics · Network analysis</span><span>JerseyCTF VI</span><span>April 18–19, 2026</span></div>
+      </div>
+    </header>
+
+    <section class="inner-section" id="challenge" aria-labelledby="challenge-title">
+      <h2 id="challenge-title">The challenge</h2>
+      <div class="section-content">
+        <p>The USS Enterprise is conducting an intelligence gathering mission near the neutral zone. During the mission, Spock intercepted some network traffic and handed you the resulting PCAP file for analysis. Upon preliminary examination Spock believes the Klingon Empire may be concealing encoded messages within otherwise routine network traffic. Your task is to analyze and uncover any hidden transmissions.</p>
+        <div class="writeup-downloads">
+          <a class="under-link" href="assets/original/qaStaH_nuq.pcap" download>Original challenge PCAP</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="http" aria-labelledby="http-title">
+      <h2 id="http-title">Follow the HTTP exchange</h2>
+      <div class="section-content">
+        <p>The request identifies the host and resource:</p>
+        <pre><code>GET /plans.html HTTP/1.1
+Host: klingon/empire.kl</code></pre>
+        <p>The corresponding response returns a text attachment named <code>flag.txt</code>. Its body is Base64 text:</p>
+        <pre><code>HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 36
+Content-Disposition: attachment; filename=flag.txt
+
+amN0ZntBdHRhY2tfVGhlX0VudGVycHJpc2V9</code></pre>
+        <p>After extracting the body, decode it with:</p>
+        <pre><code>echo 'amN0ZntBdHRhY2tfVGhlX0VudGVycHJpc2V9' | base64 -d</code></pre>
+        <pre><code>jctf{Attack_The_Enterprise}</code></pre>
+        <div class="writeup-downloads">
+          <a class="under-link" href="assets/recovered/qaStaH-http-response.txt" download>Recovered HTTP response</a>
+          <a class="under-link" href="assets/recovered/qaStaH-flag.txt" download>Recovered flag file</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="takeaway" aria-labelledby="takeaway-title">
+      <h2 id="takeaway-title">Takeaway</h2>
+      <div class="section-content">
+        <p>The capture is intentionally busy, but the payload is not hidden by encryption. Filtering for the requested URI reveals the HTTP response, and decoding its body completes the solve.</p>
+        <pre class="writeup-flag"><code>jctf{Attack_The_Enterprise}</code></pre>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>Daniel Peng · New York</span><a href="https://codewithdaniel1.github.io/competitions/jerseyctf-vi.html#writeups" data-back-to-ctf>← Back to JerseyCTF VI writeups</a></div></footer>
+</body>
+</html>

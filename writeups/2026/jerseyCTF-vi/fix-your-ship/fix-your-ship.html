@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f2ea" />
+  <meta name="description" content="A complete JerseyCTF VI Fix Your Ship walkthrough: identify and repair a PNG, JPEG, and MP4, then recover the flag." />
+  <meta property="og:title" content="Fix Your Ship | JerseyCTF VI Writeup" />
+  <meta property="og:description" content="A file-forensics walkthrough with exact byte repairs, recovered evidence, and a reproducible Python solver." />
+  <meta property="og:type" content="article" />
+  <title>Fix Your Ship | JerseyCTF VI Writeup | Daniel Peng</title>
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../styles.css?v=fix-your-ship" />
+  <script src="../../../../script.js?v=20261021a" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="https://codewithdaniel1.github.io/index.html" aria-label="Daniel Peng, home"><span class="brand-mark">dp<span class="brand-period">.</span></span><span class="brand-name">Daniel Peng</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="https://codewithdaniel1.github.io/index.html">Home</a><a href="https://codewithdaniel1.github.io/project.html">Project</a><a href="https://codewithdaniel1.github.io/research.html">Research</a><a href="https://codewithdaniel1.github.io/ctf.html">CTF</a></nav>
+    </div>
+  </header>
+
+  <main class="inner-main wrap prose" id="main">
+    <a class="back-link" href="https://codewithdaniel1.github.io/competitions/jerseyctf-vi.html#writeups" data-back-to-ctf>← Back to JerseyCTF VI writeups</a>
+    <header class="inner-hero">
+      <p class="section-index">CTF WRITEUP / JERSEYCTF VI</p>
+      <div>
+        <h1>Fix Your Ship<span class="period">.</span></h1>
+        <p class="lead">Three damaged files, three linked clues, and a flag assembled from the repaired evidence. This was a small file-repair challenge where careful inspection beat guesswork.</p>
+        <div class="article-meta"><span>Digital forensics · File repair</span><span>JerseyCTF VI</span><span>April 18–19, 2026</span></div>
+      </div>
+    </header>
+
+    <section class="inner-section" id="challenge" aria-labelledby="challenge-title">
+      <h2 id="challenge-title">The challenge</h2>
+      <div class="section-content">
+        <p>Our spaceship has crash-landed, and we need to repair its engine. Unfortunately, the files containing the ship's schematics have been corrupted.</p>
+        <p>It supplies three files with altered hexadecimal bytes. The first is meant to be a PNG, and its contents provide clues for repairing the other two.</p>
+        <div class="writeup-downloads">
+          <a class="under-link" href="assets/original/file1" download>Original challenge file · file1</a>
+          <a class="under-link" href="assets/original/file2" download>Original challenge file · file2</a>
+          <a class="under-link" href="assets/original/file3" download>Original challenge file · file3</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="overview" aria-labelledby="first-look-title">
+      <h2 id="first-look-title">First look at the files</h2>
+      <div class="section-content">
+        <p>A quick hex view exposes recognizable format markers. The file sizes also help confirm which byte positions are being discussed.</p>
+        <pre><code>xxd -l 24 file1
+xxd -l 24 file2
+xxd -l 24 file3
+xxd -s -16 file2</code></pre>
+        <div class="writeup-table-wrap">
+          <table class="writeup-table">
+            <thead><tr><th>Artifact</th><th>Evidence</th><th>Likely format</th></tr></thead>
+            <tbody>
+              <tr><td><code>file1</code></td><td><code>89 00 00 00 0d 0a 1a 0a</code></td><td>PNG signature with three damaged bytes</td></tr>
+              <tr><td><code>file2</code></td><td><code>JFIF</code> appears in its header; final two bytes are zero</td><td>JPEG</td></tr>
+              <tr><td><code>file3</code></td><td>ISO Base Media box header contains <code>pfyt</code></td><td>MP4 with a damaged <code>ftyp</code> box type</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The challenge gives the PNG format directly. The JPEG clue becomes clear from the embedded <code>JFIF</code> identifier, and the phrase “FILE TYPE BOX” in that recovered image points to the MP4 container structure.</p>
+      </div>
+    </section>
+
+    <section class="inner-section" id="png" aria-labelledby="png-title">
+      <h2 id="png-title">1. Restore the PNG</h2>
+      <div class="section-content">
+        <p>A PNG must begin with the eight-byte signature <code>89 50 4e 47 0d 0a 1a 0a</code>. The supplied file has the correct first byte and trailing four bytes, but the three ASCII bytes for <code>PNG</code> have been zeroed at offsets <code>0x01–0x03</code>.</p>
+        <pre><code>cp file1 file1.png
+printf 'PNG' | dd of=file1.png bs=1 seek=1 conv=notrunc status=none
+file file1.png</code></pre>
+        <p>After replacing just those three bytes, the image opens. Its ship schematic contains the first flag segment and a clue for repairing the next file.</p>
+        <figure class="writeup-figure">
+          <img src="assets/recovered/fix-your-ship-schematic.png" alt="Recovered spacecraft schematic with the first flag segment and a note that the next file starts with FF and ends with D9." loading="lazy" />
+          <figcaption>Recovered <code>file1.png</code>. The note “first hex digit” refers to the first byte: the JPEG begins with <code>ff</code> and ends with <code>d9</code>.</figcaption>
+        </figure>
+        <div class="writeup-callout"><p><strong>Recovered:</strong> <code>jctf{starship</code></p><p><strong>Next clue:</strong> the second file starts with byte <code>ff</code> and ends with byte <code>d9</code>.</p></div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="jpeg" aria-labelledby="jpeg-title">
+      <h2 id="jpeg-title">2. Restore the JPEG</h2>
+      <div class="section-content">
+        <p>The string <code>JFIF</code> at offset <code>0x06</code> identifies the image as a JPEG. A common JFIF header begins <code>ff d8 ff e0</code>. In this file, the first three bytes are zero, while the existing <code>e0</code> and JFIF header remain intact.</p>
+        <p>The clue from the PNG gives the required ending. JPEG files end with the End of Image marker <code>ff d9</code>; the supplied file instead ends in two zero bytes.</p>
+        <pre><code>cp file2 file2.jpg
+printf '\377\330\377' | dd of=file2.jpg bs=1 seek=0 conv=notrunc status=none
+printf '\377\331' | dd of=file2.jpg bs=1 \
+  seek=$(($(wc -c &lt; file2.jpg)-2)) conv=notrunc status=none
+file file2.jpg</code></pre>
+        <p>The repaired JPEG reveals another schematic. The text <code>_voyager_</code> supplies the next flag segment. The heading “FILE TYPE BOX” is also the hint needed for the last file.</p>
+        <figure class="writeup-figure">
+          <img src="assets/recovered/fix-your-ship-engine.jpg" alt="Recovered engine schematic labeled FILE TYPE BOX, with notes about the ship's engine and the flag segment voyager." loading="lazy" />
+          <figcaption>Recovered <code>file2.jpg</code>. “FILE TYPE BOX” points to the MP4 <code>ftyp</code> box; the marked engine walkthrough is part of the challenge’s visual clue.</figcaption>
+        </figure>
+        <div class="writeup-callout"><p><strong>Recovered:</strong> <code>_voyager_</code></p><p><strong>Next clue:</strong> inspect the MP4 File Type Box, whose box type should be <code>ftyp</code>.</p></div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="mp4" aria-labelledby="mp4-title">
+      <h2 id="mp4-title">3. Restore the MP4</h2>
+      <div class="section-content">
+        <p>ISO Base Media files are organized into boxes. The first four bytes here, <code>00 00 00 20</code>, declare a 32-byte box. The following four bytes are its type. They currently spell <code>pfyt</code>, but the image clue tells us to look for the File Type Box: <code>ftyp</code>.</p>
+        <p>Replacing the four-byte type at offset <code>0x04</code> restores the box. The file’s remaining content is intact.</p>
+        <pre><code>cp file3 file3.mp4
+printf 'ftyp' | dd of=file3.mp4 bs=1 seek=4 conv=notrunc status=none
+file file3.mp4
+ffprobe -v error -show_entries format=duration,format_name \
+  -of default=noprint_wrappers=1 file3.mp4</code></pre>
+        <p>The repaired video is about 4.2 seconds long. A frame from around one second in shows the final flag fragment, <code>apollo}</code>.</p>
+        <video class="writeup-video" controls playsinline preload="metadata" aria-label="Recovered four-second Fix Your Ship challenge video">
+          <source src="assets/recovered/fix-your-ship-recovered.mp4" type="video/mp4" />
+          Your browser does not support embedded MP4 video. <a href="assets/recovered/fix-your-ship-recovered.mp4">Download the recovered clip</a>.
+        </video>
+        <p class="quiet-note">Recovered challenge video, playable in the page or available to download.</p>
+        <div class="writeup-callout"><p><strong>Recovered:</strong> <code>apollo}</code></p></div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="flag" aria-labelledby="flag-title">
+      <h2 id="flag-title">Flag and byte changes</h2>
+      <div class="section-content">
+        <p>Reading the visible fragments in order and joining them without adding or removing characters gives the flag:</p>
+        <pre class="writeup-flag"><code>jctf{starship_voyager_apollo}</code></pre>
+        <div class="writeup-table-wrap">
+          <table class="writeup-table">
+            <thead><tr><th>File</th><th>Offset(s)</th><th>Before</th><th>After</th><th>Reason</th></tr></thead>
+            <tbody>
+              <tr><td><code>file1</code></td><td><code>0x01–0x03</code></td><td><code>00 00 00</code></td><td><code>50 4e 47</code></td><td>Restore PNG signature</td></tr>
+              <tr><td><code>file2</code></td><td><code>0x00–0x02</code></td><td><code>00 00 00</code></td><td><code>ff d8 ff</code></td><td>Restore JPEG start marker</td></tr>
+              <tr><td><code>file2</code></td><td><code>0x02d413–0x02d414</code></td><td><code>00 00</code></td><td><code>ff d9</code></td><td>Restore JPEG end marker</td></tr>
+              <tr><td><code>file3</code></td><td><code>0x04–0x07</code></td><td><code>70 66 79 74</code></td><td><code>66 74 79 70</code></td><td>Change box type from <code>pfyt</code> to <code>ftyp</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>That is 11 changed byte positions across all three files: three in the PNG, five in the JPEG, and three in the MP4. The third character in <code>pfyt</code> was already <code>y</code>, so the MP4 replacement changes three positions of the four-byte field.</p>
+      </div>
+    </section>
+
+    <section class="inner-section" id="reproduce" aria-labelledby="reproduce-title">
+      <h2 id="reproduce-title">Reproduce the repairs</h2>
+      <div class="section-content">
+        <p>The included Python script checks that each expected damaged byte sequence is present before writing a repaired copy. It leaves the original files untouched and uses only Python’s standard library.</p>
+        <pre><code>python3 solve_fix_your_ship.py assets/original/file1 assets/original/file2 assets/original/file3 --out repaired</code></pre>
+        <div class="writeup-downloads">
+          <a class="under-link" href="solve_fix_your_ship.py" download>Download Python repair script</a>
+          <a class="under-link" href="assets/recovered/fix-your-ship-schematic.png" download>Recovered PNG</a>
+          <a class="under-link" href="assets/recovered/fix-your-ship-engine.jpg" download>Recovered JPEG</a>
+          <a class="under-link" href="assets/recovered/fix-your-ship-recovered.mp4" download>Recovered MP4</a>
+        </div>
+        <div class="writeup-callout"><p><strong>Verification note:</strong> the flag is reconstructed from the supplied challenge artifacts and the repaired media was inspected locally. I have not independently confirmed an online scoreboard submission.</p></div>
+        <p>The useful lesson is simple: corruption does not always mean the whole file is lost. A few format-specific bytes can be enough to make the original content readable again. Start with what the file says about itself, follow evidence between artifacts, and keep repairs as small and verifiable as possible.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><span>Daniel Peng · New York</span><a href="https://codewithdaniel1.github.io/competitions/jerseyctf-vi.html#writeups" data-back-to-ctf>← Back to JerseyCTF VI writeups</a></div></footer>
+</body>
+</html>

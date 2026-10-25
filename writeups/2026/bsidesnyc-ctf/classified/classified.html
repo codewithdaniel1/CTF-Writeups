@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f2ea" />
+  <meta name="description" content="A BSidesNYC CTF walkthrough for Classified: trace a reference to retired Agent Poole through CipherWiki and decode a hidden document path." />
+  <meta property="og:title" content="Classified | BSidesNYC CTF Writeup" />
+  <meta property="og:description" content="Follow CipherWiki talk-page clues, decode an obfuscated path, and find the flag in the OC-7 memo." />
+  <meta property="og:type" content="article" />
+  <title>Classified | BSidesNYC CTF Writeup | Daniel Peng</title>
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../styles.css?v=classified-writeup" />
+  <script src="../../../../script.js?v=20261021a" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" target="_blank" rel="noopener noreferrer">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="https://codewithdaniel1.github.io/index.html" aria-label="Daniel Peng, home" target="_blank" rel="noopener noreferrer"><span class="brand-mark">dp<span class="brand-period">.</span></span><span class="brand-name">Daniel Peng</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="https://codewithdaniel1.github.io/index.html" target="_blank" rel="noopener noreferrer">Home</a><a href="https://codewithdaniel1.github.io/project.html" target="_blank" rel="noopener noreferrer">Project</a><a href="https://codewithdaniel1.github.io/research.html" target="_blank" rel="noopener noreferrer">Research</a><a href="https://codewithdaniel1.github.io/ctf.html" target="_blank" rel="noopener noreferrer">CTF</a></nav>
+    </div>
+  </header>
+
+  <main class="inner-main wrap prose" id="main">
+    <a class="back-link" href="https://codewithdaniel1.github.io/competitions/bsidesnyc.html#writeups" data-back-to-ctf>← Back to BSidesNYC CTF writeups</a>
+    <header class="inner-hero">
+      <p class="section-index">CTF WRITEUP / BSIDESNYC CTF</p>
+      <div>
+        <h1>Classified<span class="period">.</span></h1>
+        <p class="lead">A mole is using CipherWiki talk pages to leak information about “retired” Agent Poole. The trail leads from an archived discussion to a hex-encoded document path and a hidden flag in a classified memo.</p>
+        <div class="article-meta"><span>Forensics · Reverse engineering</span><span>BSidesNYC CTF</span><span>October 17, 2026</span></div>
+      </div>
+    </header>
+
+    <section class="inner-section" id="challenge" aria-labelledby="challenge-title">
+      <h2 id="challenge-title">The challenge</h2>
+      <div class="section-content">
+        <p>The prompt says a persistent mole is using the talk pages of CipherWiki to exfiltrate information about “retired” Agent Poole. It asks us to find the flag in the information being leaked.</p>
+        <p>Start at the <a class="inline-link" href="assets/original/cipher-wiki/index.html" target="_blank" rel="noopener noreferrer">archived CipherWiki website</a>. This local copy preserves the challenge pages and their supporting files.</p>
+        <p class="quiet-note">Original challenge URL: <a class="inline-link" href="https://ctf313.com/cipher-wiki/index.html" target="_blank" rel="noopener noreferrer">ctf313.com/cipher-wiki/index.html</a>.</p>
+      </div>
+    </section>
+
+    <section class="inner-section" id="discussion" aria-labelledby="poole-title">
+      <h2 id="poole-title">Find the Poole discussion</h2>
+      <div class="section-content">
+        <p>From the wiki homepage, open <em>The Lisbon Frequency</em> and select its <a class="inline-link" href="assets/original/cipher-wiki/talk/f02.html" target="_blank" rel="noopener noreferrer">Talk page</a>. The discussion describes Derek Poole as an unusual figure in the film’s production history: he had no film credits before or after this movie and was brought in specifically for second-unit dialogue.</p>
+        <p>That detail makes the word “retired” feel like a clue rather than background flavor. An archive notice on the page adds a direction: earlier discussion about Poole was moved to the Canon Disputes board. The talk page is not the final destination; it tells us that relevant information has been filed elsewhere.</p>
+        <div class="writeup-callout"><p><strong>Clue to carry forward:</strong> Poole’s discussion was moved to an archive. While inspecting the current page, its source also contains a document reference that is not presented as an ordinary link.</p></div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="source" aria-labelledby="source-title">
+      <h2 id="source-title">Inspect the page source</h2>
+      <div class="section-content">
+        <p>Viewing the HTML reveals an unusual rule associated with the <code>docref</code> class:</p>
+        <pre><code>.docref { #2f636c61737369666965642f6f63372e68746d6c; }</code></pre>
+        <p>This is not a normal CSS declaration: there is no property name before the value. The sequence after the hash is made up of hexadecimal characters, so treat it as encoded data rather than a color or a usable style.</p>
+        <p>Convert each pair of hex digits to a byte, then decode those bytes as ASCII:</p>
+        <pre><code>python3 -c 'print(bytes.fromhex("2f636c61737369666965642f6f63372e68746d6c").decode())'</code></pre>
+        <p>The output is a path:</p>
+        <pre><code>/classified/oc7.html</code></pre>
+        <p>The readable filename points to the OC-7 memo. Resolve this path from the CipherWiki directory: on the original host, the document is at <code>/cipher-wiki/classified/oc7.html</code>.</p>
+      </div>
+    </section>
+
+    <section class="inner-section" id="memo" aria-labelledby="memo-title">
+      <h2 id="memo-title">Read the OC-7 memo</h2>
+      <div class="section-content">
+        <p>Open the decoded path in the <a class="inline-link" href="assets/original/cipher-wiki/classified/oc7.html" target="_blank" rel="noopener noreferrer">archived OC-7 memo</a>. The memo discusses the CIPHER production series and includes a section about the Poole incident.</p>
+        <p>The flag is present in the document’s HTML inside an element with the <code>ghost-text</code> class:</p>
+        <pre><code>&lt;div class="ghost-text"&gt;FLAG = C321A&lt;/div&gt;</code></pre>
+        <p>When a page includes content that is hidden or styled unusually, inspect the document source as well as the visible page. Here the flag is directly readable in the markup once the memo has been found.</p>
+      </div>
+    </section>
+
+    <section class="inner-section" id="flag" aria-labelledby="flag-title">
+      <h2 id="flag-title">Flag</h2>
+      <div class="section-content">
+        <p>The archived discussion identifies the trail, the malformed CSS rule carries a hex-encoded path, and the memo’s source reveals the flag:</p>
+        <pre class="writeup-flag"><code>C321A</code></pre>
+        <div class="writeup-table-wrap">
+          <table class="writeup-table">
+            <thead><tr><th>Step</th><th>Evidence</th><th>What it tells us</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td><em>The Lisbon Frequency</em> talk page</td><td>Poole’s discussion was moved to the Canon Disputes archive.</td></tr>
+              <tr><td>2</td><td><code>.docref</code> rule with hex data</td><td>Decoding the value reveals <code>/classified/oc7.html</code>.</td></tr>
+              <tr><td>3</td><td>OC-7 memo source</td><td>The <code>ghost-text</code> element contains <code>FLAG = C321A</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The main lesson is to follow the information trail the challenge gives you. Talk pages can contain leads, archive notices can point to the next location, and an odd source-code value may be a path encoded in plain sight.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><span>Daniel Peng · New York</span><a href="https://codewithdaniel1.github.io/competitions/bsidesnyc.html#writeups" data-back-to-ctf>← Back to BSidesNYC CTF writeups</a></div></footer>
+</body>
+</html>

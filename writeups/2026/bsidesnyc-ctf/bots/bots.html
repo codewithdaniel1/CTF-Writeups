@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f2ea" />
+  <meta name="description" content="A BSidesNYC CTF walkthrough for Bots: compare CipherWiki talk-page timestamps to identify coordinated bot accounts." />
+  <meta property="og:title" content="Bots | BSidesNYC CTF Writeup" />
+  <meta property="og:description" content="Find suspiciously rapid, repeated replies across CipherWiki talk pages." />
+  <meta property="og:type" content="article" />
+  <title>Bots | BSidesNYC CTF Writeup | Daniel Peng</title>
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../styles.css?v=classified-writeup" />
+  <script src="../../../../script.js?v=20261021a" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" target="_blank" rel="noopener noreferrer">Skip to content</a>
+  <header class="site-header"><div class="header-inner wrap">
+    <a class="brand" href="https://codewithdaniel1.github.io/index.html" aria-label="Daniel Peng, home" target="_blank" rel="noopener noreferrer"><span class="brand-mark">dp<span class="brand-period">.</span></span><span class="brand-name">Daniel Peng</span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="https://codewithdaniel1.github.io/index.html" target="_blank" rel="noopener noreferrer">Home</a><a href="https://codewithdaniel1.github.io/project.html" target="_blank" rel="noopener noreferrer">Project</a><a href="https://codewithdaniel1.github.io/research.html" target="_blank" rel="noopener noreferrer">Research</a><a href="https://codewithdaniel1.github.io/ctf.html" target="_blank" rel="noopener noreferrer">CTF</a></nav>
+  </div></header>
+
+  <main class="inner-main wrap prose" id="main">
+    <a class="back-link" href="https://codewithdaniel1.github.io/competitions/bsidesnyc.html#writeups" data-back-to-ctf>← Back to BSidesNYC CTF writeups</a>
+    <header class="inner-hero"><p class="section-index">CTF WRITEUP / BSIDESNYC CTF</p><div>
+      <h1>Bots<span class="period">.</span></h1>
+      <p class="lead">Compare the timestamps on repeated CipherWiki talk-page threads. The same accounts appear almost immediately after a disinformation post, months apart.</p>
+      <div class="article-meta"><span>Forensics · OSINT · Wiki</span><span>BSidesNYC CTF · 100 points</span><span>October 17, 2026</span></div>
+    </div></header>
+
+    <section class="inner-section" id="challenge" aria-labelledby="challenge-title"><h2 id="challenge-title">The challenge</h2><div class="section-content">
+      <p>“Agent, a few of our disinformation bots have been... overzealous... in the speed of their replies in the talk pages, casting suspicion on their identities. Help us troubleshoot by identifying one of the usernames of the bots.”</p>
+      <p>Start at the <a class="inline-link" href="../classified/assets/original/cipher-wiki/index.html" target="_blank" rel="noopener noreferrer">archived CipherWiki website</a>. This local copy preserves the challenge pages and their supporting files.</p>
+      <p class="quiet-note">Original challenge URL: <a class="inline-link" href="https://ctf313.com/cipher-wiki/index.html" target="_blank" rel="noopener noreferrer">ctf313.com/cipher-wiki/index.html</a>.</p>
+    </div></section>
+
+    <section class="inner-section" id="zero-meridian" aria-labelledby="zero-title"><h2 id="zero-title">Check the first thread</h2><div class="section-content">
+      <p>On the <a class="inline-link" href="../classified/assets/original/cipher-wiki/talk/f09.html" target="_blank" rel="noopener noreferrer"><em>Zero Meridian</em> talk page</a>, find the thread titled <strong>“THIS FILM IS BASED ON REAL EVENTS — READ THIS.”</strong> The post by <code>RealDarkArchive</code> is timestamped <strong>1 Mar 2024, 03:17</strong>. Four accounts answer within two minutes:</p>
+      <ul>
+        <li><code>CipherFan_88</code> — 03:18</li>
+        <li><code>WardForever</code> — 03:18</li>
+        <li><code>FilmBuffUK</code> — 03:19</li>
+        <li><code>MeridianMark</code> — 03:19</li>
+      </ul>
+      <p>Later, <code>RealDarkArchive</code> explicitly calls attention to how quickly those replies arrived.</p>
+    </div></section>
+
+    <section class="inner-section" id="cross-check" aria-labelledby="cross-check-title"><h2 id="cross-check-title">Cross-check the second thread</h2><div class="section-content">
+      <p>The <a class="inline-link" href="../classified/assets/original/cipher-wiki/talk/f15.html" target="_blank" rel="noopener noreferrer"><em>The Last Directorate</em> talk page</a> repeats the pattern in a thread titled <strong>“THIS IS ALL REAL — SECOND WARNING.”</strong> <code>RealDarkArchive</code> posts at <strong>28 Oct 2023, 02:44</strong>. The same four usernames answer by 02:46, in the same order. A regular user does not join until 08:30.</p>
+      <p>The repeated, near-immediate replies across two separate discussions identify a coordinated group. The challenge asks for one username; <code>CipherFan_88</code> is the first account in both bursts.</p>
+      <div class="writeup-callout"><p><strong>Answer:</strong> <code>CipherFan_88</code>. The other accounts in the same rapid-response group are <code>WardForever</code>, <code>FilmBuffUK</code>, and <code>MeridianMark</code>.</p></div>
+    </div></section>
+
+    <section class="inner-section" id="flag" aria-labelledby="flag-title"><h2 id="flag-title">Flag</h2><div class="section-content">
+      <pre class="writeup-flag"><code>CipherFan_88</code></pre>
+      <p>The username is the requested answer. The evidence is the same coordinated set of four accounts posting within minutes on both talk pages.</p>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>Daniel Peng · New York</span><a href="https://codewithdaniel1.github.io/competitions/bsidesnyc.html#writeups" data-back-to-ctf>← Back to BSidesNYC CTF writeups</a></div></footer>
+</body>
+</html>

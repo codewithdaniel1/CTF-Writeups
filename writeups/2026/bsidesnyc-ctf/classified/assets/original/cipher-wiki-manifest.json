@@ -1,0 +1,2893 @@
+{
+  "captured_at_utc": "2026-10-18T18:09:21.885730+00:00",
+  "source_url": "https://ctf313.com/cipher-wiki/index.html",
+  "notes": [
+    "HTML and CSS URLs are localized; original text sources are in cipher-wiki-source.zip.",
+    "Media and font bytes are unchanged.",
+    "Known broken article-navigation URLs on the source site are repaired to their existing counterparts.",
+    "The main talk page brand and Main Page links are repaired to point to the wiki home.",
+    "Clue data, hidden content, inline styles, and inert controls are preserved."
+  ],
+  "source_link_repairs": {
+    "https://ctf313.com/cipher-wiki/talk/actors/bauer.html": "https://ctf313.com/cipher-wiki/actors/bauer.html",
+    "https://ctf313.com/cipher-wiki/talk/actors/calloway.html": "https://ctf313.com/cipher-wiki/actors/calloway.html",
+    "https://ctf313.com/cipher-wiki/talk/actors/cavender.html": "https://ctf313.com/cipher-wiki/actors/cavender.html",
+    "https://ctf313.com/cipher-wiki/talk/actors/mace.html": "https://ctf313.com/cipher-wiki/actors/mace.html",
+    "https://ctf313.com/cipher-wiki/talk/actors/obi.html": "https://ctf313.com/cipher-wiki/actors/obi.html",
+    "https://ctf313.com/cipher-wiki/talk/characters/ward.html": "https://ctf313.com/cipher-wiki/characters/ward.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f01.html": "https://ctf313.com/cipher-wiki/films/f01.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f02.html": "https://ctf313.com/cipher-wiki/films/f02.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f03.html": "https://ctf313.com/cipher-wiki/films/f03.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f04.html": "https://ctf313.com/cipher-wiki/films/f04.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f05.html": "https://ctf313.com/cipher-wiki/films/f05.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f06.html": "https://ctf313.com/cipher-wiki/films/f06.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f07.html": "https://ctf313.com/cipher-wiki/films/f07.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f08.html": "https://ctf313.com/cipher-wiki/films/f08.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f09.html": "https://ctf313.com/cipher-wiki/films/f09.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f10.html": "https://ctf313.com/cipher-wiki/films/f10.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f11.html": "https://ctf313.com/cipher-wiki/films/f11.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f12.html": "https://ctf313.com/cipher-wiki/films/f12.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f13.html": "https://ctf313.com/cipher-wiki/films/f13.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f14.html": "https://ctf313.com/cipher-wiki/films/f14.html",
+    "https://ctf313.com/cipher-wiki/talk/films/f15.html": "https://ctf313.com/cipher-wiki/films/f15.html",
+    "https://ctf313.com/cipher-wiki/talk/films/index.html": "https://ctf313.com/cipher-wiki/films/index.html",
+    "https://ctf313.com/cipher-wiki/talk/org/hexon.html": "https://ctf313.com/cipher-wiki/org/hexon.html",
+    "https://ctf313.com/cipher-wiki/talk/org/sentinel.html": "https://ctf313.com/cipher-wiki/org/sentinel.html",
+    "https://ctf313.com/cipher-wiki/talk/production.html": "https://ctf313.com/cipher-wiki/production/index.html"
+  },
+  "url_changes": [
+    {
+      "file": "_fonts/styles-85a053d27ec3.css",
+      "from": "https://fonts.gstatic.com/s/courierprime/v11/u-4n0q2lgwslOqpF_6gQ8kELawRpXw.ttf",
+      "to": "u-4n0q2lgwslOqpF_6gQ8kELawRpXw.ttf"
+    },
+    {
+      "file": "_fonts/styles-85a053d27ec3.css",
+      "from": "https://fonts.gstatic.com/s/courierprime/v11/u-450q2lgwslOqpF_6gQ8kELWwY.ttf",
+      "to": "u-450q2lgwslOqpF_6gQ8kELWwY.ttf"
+    },
+    {
+      "file": "_fonts/styles-85a053d27ec3.css",
+      "from": "https://fonts.gstatic.com/s/courierprime/v11/u-4k0q2lgwslOqpF_6gQ8kELY7pMf-c.ttf",
+      "to": "u-4k0q2lgwslOqpF_6gQ8kELY7pMf-c.ttf"
+    },
+    {
+      "file": "_fonts/styles-85a053d27ec3.css",
+      "from": "https://fonts.gstatic.com/s/specialelite/v20/XLYgIZbkc4JPUL5CVArUVL0nhnc.ttf",
+      "to": "XLYgIZbkc4JPUL5CVArUVL0nhnc.ttf"
+    },
+    {
+      "file": "_fonts/styles-ebd7aa5be017.css",
+      "from": "https://fonts.gstatic.com/s/librebaskerville/v24/kmKWZrc3Hgbbcjq75U4uslyuy4kn0qNccR04_RUJeby2OU36SgNK.ttf",
+      "to": "kmKWZrc3Hgbbcjq75U4uslyuy4kn0qNccR04_RUJeby2OU36SgNK.ttf"
+    },
+    {
+      "file": "_fonts/styles-ebd7aa5be017.css",
+      "from": "https://fonts.gstatic.com/s/librebaskerville/v24/kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17uj8Q4SCQ.ttf",
+      "to": "kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17uj8Q4SCQ.ttf"
+    },
+    {
+      "file": "_fonts/styles-ebd7aa5be017.css",
+      "from": "https://fonts.gstatic.com/s/librebaskerville/v24/kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17ujFgkSCQ.ttf",
+      "to": "kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17ujFgkSCQ.ttf"
+    },
+    {
+      "file": "_fonts/styles-ebd7aa5be017.css",
+      "from": "https://fonts.gstatic.com/s/sharetechmono/v16/J7aHnp1uDWRBEqV98dVQztYldFc7pA.ttf",
+      "to": "J7aHnp1uDWRBEqV98dVQztYldFc7pA.ttf"
+    },
+    {
+      "file": "_fonts/styles-ebd7aa5be017.css",
+      "from": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpDtKy2OAdR1K-IwhWudF-R3woAa8opPOrG97lwqLlO9C4.ttf",
+      "to": "nwpDtKy2OAdR1K-IwhWudF-R3woAa8opPOrG97lwqLlO9C4.ttf"
+    },
+    {
+      "file": "_fonts/styles-ebd7aa5be017.css",
+      "from": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kzm61EN.ttf",
+      "to": "nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kzm61EN.ttf"
+    },
+    {
+      "file": "_fonts/styles-ebd7aa5be017.css",
+      "from": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Ky461EN.ttf",
+      "to": "nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Ky461EN.ttf"
+    },
+    {
+      "file": "_fonts/styles-ebd7aa5be017.css",
+      "from": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kxm7FEN.ttf",
+      "to": "nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kxm7FEN.ttf"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../media/images/Stefan Bauer (1991).png",
+      "to": "../media/images/Stefan%20Bauer%20(1991).png"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/bauer.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../media/images/James Calloway (2006).png",
+      "to": "../media/images/James%20Calloway%20(2006).png"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../media/images/James Calloway - Fracture Point Premiere (2018).png",
+      "to": "../media/images/James%20Calloway%20-%20Fracture%20Point%20Premiere%20(2018).png"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../media/images/James Calloway - Fracture Point Premiere (2018).png",
+      "to": "../media/images/James%20Calloway%20-%20Fracture%20Point%20Premiere%20(2018).png"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/calloway.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../media/images/Hugh Cavender (1965).png",
+      "to": "../media/images/Hugh%20Cavender%20(1965).png"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/cavender.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../media/images/Roland Mace (1977).png",
+      "to": "../media/images/Roland%20Mace%20(1977).png"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/mace.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../media/images/Marcus Obi (2023).png",
+      "to": "../media/images/Marcus%20Obi%20(2023).png"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../media/images/Marcus Obi and  Adaeze Okoye - The Last Directorate Premiere (2023).png",
+      "to": "../media/images/Marcus%20Obi%20and%20%20Adaeze%20Okoye%20-%20The%20Last%20Directorate%20Premiere%20(2023).png"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../media/images/Marcus Obi and  Adaeze Okoye - The Last Directorate Premiere (2023).png",
+      "to": "../media/images/Marcus%20Obi%20and%20%20Adaeze%20Okoye%20-%20The%20Last%20Directorate%20Premiere%20(2023).png"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/cavender.html",
+      "to": "cavender.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/mace.html",
+      "to": "mace.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/bauer.html",
+      "to": "bauer.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/calloway.html",
+      "to": "calloway.html"
+    },
+    {
+      "file": "actors/obi.html",
+      "from": "../actors/obi.html",
+      "to": "obi.html"
+    },
+    {
+      "file": "characters/ward.html",
+      "from": "../characters/ward.html",
+      "to": "ward.html"
+    },
+    {
+      "file": "characters/ward.html",
+      "from": "../media/images/Declan Ward - Actors Composite.png",
+      "to": "../media/images/Declan%20Ward%20-%20Actors%20Composite.png"
+    },
+    {
+      "file": "characters/ward.html",
+      "from": "../characters/ward.html",
+      "to": "ward.html"
+    },
+    {
+      "file": "classified/oc7.html",
+      "from": "https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap",
+      "to": "../_fonts/styles-85a053d27ec3.css"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../media/images/CIPHER - Shadow and Steel Poster (1965).png",
+      "to": "../media/images/CIPHER%20-%20Shadow%20and%20Steel%20Poster%20(1965).png"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../media/images/CIPHER - Shadow and Steel Poster (1965).png",
+      "to": "../media/images/CIPHER%20-%20Shadow%20and%20Steel%20Poster%20(1965).png"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../media/audio/CIPHER - Vivienne Clair - Shadow and Steel (1965).flac",
+      "to": "../media/audio/CIPHER%20-%20Vivienne%20Clair%20-%20Shadow%20and%20Steel%20(1965).flac"
+    },
+    {
+      "file": "films/f01.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../media/images/CIPHER - The Lisbon Frequency Poster (1967).jpg",
+      "to": "../media/images/CIPHER%20-%20The%20Lisbon%20Frequency%20Poster%20(1967).jpg"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../media/images/CIPHER - The Lisbon Frequency Poster (1967).jpg",
+      "to": "../media/images/CIPHER%20-%20The%20Lisbon%20Frequency%20Poster%20(1967).jpg"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../media/audio/CIPHER - Vivienne Clair - Lisbon Frequency (1967).flac",
+      "to": "../media/audio/CIPHER%20-%20Vivienne%20Clair%20-%20Lisbon%20Frequency%20(1967).flac"
+    },
+    {
+      "file": "films/f02.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../media/audio/CIPHER - Vivienne Clair - Agent Alone (1970).flac",
+      "to": "../media/audio/CIPHER%20-%20Vivienne%20Clair%20-%20Agent%20Alone%20(1970).flac"
+    },
+    {
+      "file": "films/f03.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../media/images/CIPHER - Crimson Meridian Poster (1973).png",
+      "to": "../media/images/CIPHER%20-%20Crimson%20Meridian%20Poster%20(1973).png"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../media/images/CIPHER - Crimson Meridian Poster (1973).png",
+      "to": "../media/images/CIPHER%20-%20Crimson%20Meridian%20Poster%20(1973).png"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../media/audio/CIPHER - Vivienne Clair - Crimson Meridian (1973).flac",
+      "to": "../media/audio/CIPHER%20-%20Vivienne%20Clair%20-%20Crimson%20Meridian%20(1973).flac"
+    },
+    {
+      "file": "films/f04.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f05.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f06.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../media/audio/CIPHER - Chrome Vector - Dangerous Silhouette (1986).mp3",
+      "to": "../media/audio/CIPHER%20-%20Chrome%20Vector%20-%20Dangerous%20Silhouette%20(1986).mp3"
+    },
+    {
+      "file": "films/f07.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f08.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../media/images/Screenshot - Zero Meridian Video Game (1997).png",
+      "to": "../media/images/Screenshot%20-%20Zero%20Meridian%20Video%20Game%20(1997).png"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../media/images/Screenshot - Zero Meridian Video Game (1997).png",
+      "to": "../media/images/Screenshot%20-%20Zero%20Meridian%20Video%20Game%20(1997).png"
+    },
+    {
+      "file": "films/f09.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../media/audio/CIPHER - Parallel Signal and Bethany Mann - In Plain Sight (2002).flac",
+      "to": "../media/audio/CIPHER%20-%20Parallel%20Signal%20and%20Bethany%20Mann%20-%20In%20Plain%20Sight%20(2002).flac"
+    },
+    {
+      "file": "films/f10.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../media/audio/CIPHER - Soraya Nile - The Weight of Kingdoms (2006).flac",
+      "to": "../media/audio/CIPHER%20-%20Soraya%20Nile%20-%20The%20Weight%20of%20Kingdoms%20(2006).flac"
+    },
+    {
+      "file": "films/f11.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f12.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f13.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../media/audio/CIPHER - VANTA - Fracture (2018).flac",
+      "to": "../media/audio/CIPHER%20-%20VANTA%20-%20Fracture%20(2018).flac"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../media/images/James Calloway - Fracture Point Filming Chase Sequence (2017).png",
+      "to": "../media/images/James%20Calloway%20-%20Fracture%20Point%20Filming%20Chase%20Sequence%20(2017).png"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../media/images/James Calloway - Fracture Point Filming Chase Sequence (2017).png",
+      "to": "../media/images/James%20Calloway%20-%20Fracture%20Point%20Filming%20Chase%20Sequence%20(2017).png"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../media/images/James Calloway - Fracture Point Premiere (2018).png",
+      "to": "../media/images/James%20Calloway%20-%20Fracture%20Point%20Premiere%20(2018).png"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../media/images/James Calloway - Fracture Point Premiere (2018).png",
+      "to": "../media/images/James%20Calloway%20-%20Fracture%20Point%20Premiere%20(2018).png"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f14.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../media/audio/CIPHER - Marcus Obi - Never Belonged (2023).flac",
+      "to": "../media/audio/CIPHER%20-%20Marcus%20Obi%20-%20Never%20Belonged%20(2023).flac"
+    },
+    {
+      "file": "films/f15.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f01.html",
+      "to": "f01.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f02.html",
+      "to": "f02.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f03.html",
+      "to": "f03.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f04.html",
+      "to": "f04.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f05.html",
+      "to": "f05.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f06.html",
+      "to": "f06.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f07.html",
+      "to": "f07.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f08.html",
+      "to": "f08.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f10.html",
+      "to": "f10.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f11.html",
+      "to": "f11.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f12.html",
+      "to": "f12.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f13.html",
+      "to": "f13.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f14.html",
+      "to": "f14.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/f15.html",
+      "to": "f15.html"
+    },
+    {
+      "file": "films/index.html",
+      "from": "../films/index.html",
+      "to": "index.html"
+    },
+    {
+      "file": "index.html",
+      "from": "production",
+      "to": "production/index.html"
+    },
+    {
+      "file": "index.html",
+      "from": "production",
+      "to": "production/index.html"
+    },
+    {
+      "file": "org/hexon.html",
+      "from": "../org/hexon.html",
+      "to": "hexon.html"
+    },
+    {
+      "file": "org/hexon.html",
+      "from": "../org/sentinel.html",
+      "to": "sentinel.html"
+    },
+    {
+      "file": "org/hexon.html",
+      "from": "../org/hexon.html",
+      "to": "hexon.html"
+    },
+    {
+      "file": "org/hexon.html",
+      "from": "../org/sentinel.html",
+      "to": "sentinel.html"
+    },
+    {
+      "file": "org/sentinel.html",
+      "from": "../org/hexon.html",
+      "to": "hexon.html"
+    },
+    {
+      "file": "org/sentinel.html",
+      "from": "../org/sentinel.html",
+      "to": "sentinel.html"
+    },
+    {
+      "file": "org/sentinel.html",
+      "from": "../org/hexon.html",
+      "to": "hexon.html"
+    },
+    {
+      "file": "org/sentinel.html",
+      "from": "../org/sentinel.html",
+      "to": "sentinel.html"
+    },
+    {
+      "file": "production/index.html",
+      "from": "../media/images/Logo - Meridian Pictures.png",
+      "to": "../media/images/Logo%20-%20Meridian%20Pictures.png"
+    },
+    {
+      "file": "production/index.html",
+      "from": "../media/images/Logo - Meridian Pictures.png",
+      "to": "../media/images/Logo%20-%20Meridian%20Pictures.png"
+    },
+    {
+      "file": "production/index.html",
+      "from": "../media/images/Logo - The Halcyon Group.png",
+      "to": "../media/images/Logo%20-%20The%20Halcyon%20Group.png"
+    },
+    {
+      "file": "production/index.html",
+      "from": "../media/images/Logo - The Halcyon Group.png",
+      "to": "../media/images/Logo%20-%20The%20Halcyon%20Group.png"
+    },
+    {
+      "file": "style.css",
+      "from": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Share+Tech+Mono&display=swap",
+      "to": "_fonts/styles-ebd7aa5be017.css"
+    },
+    {
+      "file": "talk/f05.html",
+      "from": "../films/f05.html#",
+      "to": "../films/f05.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "index.html",
+      "to": "../index.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "index.html",
+      "to": "../index.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "index.html",
+      "to": "../index.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/index.html",
+      "to": "../films/index.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "characters/ward.html",
+      "to": "../characters/ward.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "org/hexon.html",
+      "to": "../org/hexon.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "org/sentinel.html",
+      "to": "../org/sentinel.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "actors/cavender.html",
+      "to": "../actors/cavender.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "actors/mace.html",
+      "to": "../actors/mace.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "actors/bauer.html",
+      "to": "../actors/bauer.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "actors/calloway.html",
+      "to": "../actors/calloway.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "actors/obi.html",
+      "to": "../actors/obi.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f01.html",
+      "to": "../films/f01.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f02.html",
+      "to": "../films/f02.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f03.html",
+      "to": "../films/f03.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f04.html",
+      "to": "../films/f04.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f05.html",
+      "to": "../films/f05.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f06.html",
+      "to": "../films/f06.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f07.html",
+      "to": "../films/f07.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f08.html",
+      "to": "../films/f08.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f09.html",
+      "to": "../films/f09.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f10.html",
+      "to": "../films/f10.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f11.html",
+      "to": "../films/f11.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f12.html",
+      "to": "../films/f12.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f13.html",
+      "to": "../films/f13.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f14.html",
+      "to": "../films/f14.html"
+    },
+    {
+      "file": "talk/index.html",
+      "from": "films/f15.html",
+      "to": "../films/f15.html"
+    },
+    {
+      "file": "talk/style.css",
+      "from": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Share+Tech+Mono&display=swap",
+      "to": "../_fonts/styles-ebd7aa5be017.css"
+    },
+    {
+      "file": "talk/talk_production.html",
+      "from": "production.html",
+      "to": "../production/index.html"
+    },
+    {
+      "file": "talk/talk_production.html",
+      "from": "production.html",
+      "to": "../production/index.html"
+    },
+    {
+      "file": "talk/talk_production.html",
+      "from": "../talk/org_sentinel.html",
+      "to": "org_sentinel.html"
+    },
+    {
+      "file": "talk/talk_production.html",
+      "from": "../talk/org_hexon.html",
+      "to": "org_hexon.html"
+    },
+    {
+      "file": "talk/talk_production.html",
+      "from": "../talk/f09.html",
+      "to": "f09.html"
+    },
+    {
+      "file": "talk/talk_production.html",
+      "from": "../talk/f02.html",
+      "to": "f02.html"
+    }
+  ],
+  "external_references": [
+    "https://en.wikipedia.org/wiki/Cheltenham_College",
+    "https://en.wikipedia.org/wiki/Lisbon",
+    "https://en.wikipedia.org/wiki/London",
+    "https://en.wikipedia.org/wiki/Nine_Elms",
+    "https://en.wikipedia.org/wiki/Tallinn"
+  ],
+  "files": [
+    {
+      "source_url": "https://fonts.gstatic.com/s/sharetechmono/v16/J7aHnp1uDWRBEqV98dVQztYldFc7pA.ttf",
+      "local_path": "cipher-wiki/_fonts/J7aHnp1uDWRBEqV98dVQztYldFc7pA.ttf",
+      "content_type": "font/ttf",
+      "bytes": 41912,
+      "source_sha256": "5f6b57538a1a35469a038dc3073003cebc4c101ad7b3c219e9555a3b3c0a81d2",
+      "archived_sha256": "5f6b57538a1a35469a038dc3073003cebc4c101ad7b3c219e9555a3b3c0a81d2"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/specialelite/v20/XLYgIZbkc4JPUL5CVArUVL0nhnc.ttf",
+      "local_path": "cipher-wiki/_fonts/XLYgIZbkc4JPUL5CVArUVL0nhnc.ttf",
+      "content_type": "font/ttf",
+      "bytes": 150524,
+      "source_sha256": "9f59e3a0e1c0008f2ef97b1c94e5d96c43748bbc92993570d1133454a484254c",
+      "archived_sha256": "9f59e3a0e1c0008f2ef97b1c94e5d96c43748bbc92993570d1133454a484254c"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/librebaskerville/v24/kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17uj8Q4SCQ.ttf",
+      "local_path": "cipher-wiki/_fonts/kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17uj8Q4SCQ.ttf",
+      "content_type": "font/ttf",
+      "bytes": 106728,
+      "source_sha256": "f5bc4341f15de5e877d8d95b6b14b33e9a3da1f8fef4ed0700ed407f096cffb6",
+      "archived_sha256": "f5bc4341f15de5e877d8d95b6b14b33e9a3da1f8fef4ed0700ed407f096cffb6"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/librebaskerville/v24/kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17ujFgkSCQ.ttf",
+      "local_path": "cipher-wiki/_fonts/kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17ujFgkSCQ.ttf",
+      "content_type": "font/ttf",
+      "bytes": 106752,
+      "source_sha256": "8b008ffdae31b314657cb8e28d822da09893035d06bad9b1ab53ea762549cbd1",
+      "archived_sha256": "8b008ffdae31b314657cb8e28d822da09893035d06bad9b1ab53ea762549cbd1"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/librebaskerville/v24/kmKWZrc3Hgbbcjq75U4uslyuy4kn0qNccR04_RUJeby2OU36SgNK.ttf",
+      "local_path": "cipher-wiki/_fonts/kmKWZrc3Hgbbcjq75U4uslyuy4kn0qNccR04_RUJeby2OU36SgNK.ttf",
+      "content_type": "font/ttf",
+      "bytes": 109748,
+      "source_sha256": "b2149da8101de6ecbc0d5ea9616a0a0a45fbd01701f012a0ae9b0d0ed733c070",
+      "archived_sha256": "b2149da8101de6ecbc0d5ea9616a0a0a45fbd01701f012a0ae9b0d0ed733c070"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kxm7FEN.ttf",
+      "local_path": "cipher-wiki/_fonts/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kxm7FEN.ttf",
+      "content_type": "font/ttf",
+      "bytes": 234680,
+      "source_sha256": "950e66c48e5e60c9407421d0fa601047176f17e0d22a598bbd084dde45a98be2",
+      "archived_sha256": "950e66c48e5e60c9407421d0fa601047176f17e0d22a598bbd084dde45a98be2"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Ky461EN.ttf",
+      "local_path": "cipher-wiki/_fonts/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Ky461EN.ttf",
+      "content_type": "font/ttf",
+      "bytes": 234708,
+      "source_sha256": "20ab9752bd19a373dba627393b6c142e6cf8fc2f219119a8e0cb1442ef679ec5",
+      "archived_sha256": "20ab9752bd19a373dba627393b6c142e6cf8fc2f219119a8e0cb1442ef679ec5"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kzm61EN.ttf",
+      "local_path": "cipher-wiki/_fonts/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kzm61EN.ttf",
+      "content_type": "font/ttf",
+      "bytes": 234604,
+      "source_sha256": "a237cc261c42e5bb85a27365c4fea397fae2a269bd0899e2e1f24f399419b388",
+      "archived_sha256": "a237cc261c42e5bb85a27365c4fea397fae2a269bd0899e2e1f24f399419b388"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpDtKy2OAdR1K-IwhWudF-R3woAa8opPOrG97lwqLlO9C4.ttf",
+      "local_path": "cipher-wiki/_fonts/nwpDtKy2OAdR1K-IwhWudF-R3woAa8opPOrG97lwqLlO9C4.ttf",
+      "content_type": "font/ttf",
+      "bytes": 209376,
+      "source_sha256": "4c51c2a49d1bd7046376443c1577b76f251944a6366f5f7918a8377e20e50c1f",
+      "archived_sha256": "4c51c2a49d1bd7046376443c1577b76f251944a6366f5f7918a8377e20e50c1f"
+    },
+    {
+      "source_url": "https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap",
+      "local_path": "cipher-wiki/_fonts/styles-85a053d27ec3.css",
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 707,
+      "source_sha256": "f088e5401de4c69d626502c328cfeb364e547317bb7570b7a2074124747ab61a",
+      "archived_sha256": "96cbf3758fd8b51e7f0e42fa4fbd143e000f1f21eb603759a0efebc8278cdda3"
+    },
+    {
+      "source_url": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Share+Tech+Mono&display=swap",
+      "local_path": "cipher-wiki/_fonts/styles-ebd7aa5be017.css",
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 1559,
+      "source_sha256": "61060e6c67d8f29d8af2d014d2569178cc914de7dfe2b35419be632d77a0e1b5",
+      "archived_sha256": "60869f992511be1066c7a2c437435cfcfb62b9ac332f8355d3e674350f70cd2b"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/courierprime/v11/u-450q2lgwslOqpF_6gQ8kELWwY.ttf",
+      "local_path": "cipher-wiki/_fonts/u-450q2lgwslOqpF_6gQ8kELWwY.ttf",
+      "content_type": "font/ttf",
+      "bytes": 66444,
+      "source_sha256": "b03b41606b4469bd908aaa83146ba19d34cbeab1ce11fac0074d0d8fe9eba6cc",
+      "archived_sha256": "b03b41606b4469bd908aaa83146ba19d34cbeab1ce11fac0074d0d8fe9eba6cc"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/courierprime/v11/u-4k0q2lgwslOqpF_6gQ8kELY7pMf-c.ttf",
+      "local_path": "cipher-wiki/_fonts/u-4k0q2lgwslOqpF_6gQ8kELY7pMf-c.ttf",
+      "content_type": "font/ttf",
+      "bytes": 68080,
+      "source_sha256": "79d4be90ecb99d03ca5474a4e688e2fb45abcd4a9c348164c3aa9166c67cd53b",
+      "archived_sha256": "79d4be90ecb99d03ca5474a4e688e2fb45abcd4a9c348164c3aa9166c67cd53b"
+    },
+    {
+      "source_url": "https://fonts.gstatic.com/s/courierprime/v11/u-4n0q2lgwslOqpF_6gQ8kELawRpXw.ttf",
+      "local_path": "cipher-wiki/_fonts/u-4n0q2lgwslOqpF_6gQ8kELawRpXw.ttf",
+      "content_type": "font/ttf",
+      "bytes": 75488,
+      "source_sha256": "491b12db874ee76b6f96c1fe8259d081379de392a98666ff185b416d41073aaa",
+      "archived_sha256": "491b12db874ee76b6f96c1fe8259d081379de392a98666ff185b416d41073aaa"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/actors/bauer.html",
+      "local_path": "cipher-wiki/actors/bauer.html",
+      "content_type": "text/html",
+      "bytes": 9624,
+      "source_sha256": "af71659959254fa76f139f34f4a3aff230197b2f763efebcf27bb290e9f7139f",
+      "archived_sha256": "c2039fb97d7a4753f1c1494cef6f8e5885ae51a68b95d0dacefef83a4bf4580a"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/actors/calloway.html",
+      "local_path": "cipher-wiki/actors/calloway.html",
+      "content_type": "text/html",
+      "bytes": 9760,
+      "source_sha256": "0d8f0cbb9b88dd7f09e7a41e82d3a048be2e2a68965d8b887ec69abe01710e14",
+      "archived_sha256": "3e92b60de1aa636a3ab8801c8eefa638baebaab185a33169bf1690f764f936c3"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/actors/cavender.html",
+      "local_path": "cipher-wiki/actors/cavender.html",
+      "content_type": "text/html",
+      "bytes": 10289,
+      "source_sha256": "6fc4f64906423c51f6223ab7806632c4e77ab95c637d8ddbab9e89a5feee6d4a",
+      "archived_sha256": "54c439f49034782e06d796c20d8ea81e7497c6e241f557cd01c56cb6ff72ba64"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/actors/mace.html",
+      "local_path": "cipher-wiki/actors/mace.html",
+      "content_type": "text/html",
+      "bytes": 9881,
+      "source_sha256": "4e494df7fb4794ffbe09c16d403d46e7e8cad182f5dadc095e67bd336524e76f",
+      "archived_sha256": "fe02772127e792e4281a404489160b634f4fcaa0228de72d4ef7acf77f120023"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/actors/obi.html",
+      "local_path": "cipher-wiki/actors/obi.html",
+      "content_type": "text/html",
+      "bytes": 9645,
+      "source_sha256": "77e1d07b19361a613e24cf283e8c8b348bd3f3dbc9e251e481ce86528c53917b",
+      "archived_sha256": "15b4241d8ef595671d100c1171f4a47f18631297e78d7b166c850c03ee24478d"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/characters/ward.html",
+      "local_path": "cipher-wiki/characters/ward.html",
+      "content_type": "text/html",
+      "bytes": 10858,
+      "source_sha256": "85dbf2977ba6d0c206e28f5a56d29bc7c885e2761748f51e3e43bb12e39c364c",
+      "archived_sha256": "27bd4648983161357181fe33d8950a725f8bff8c452ccfc31eec93d6f624ad8a"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/classified/oc7.html",
+      "local_path": "cipher-wiki/classified/oc7.html",
+      "content_type": "text/html",
+      "bytes": 27862,
+      "source_sha256": "68a8bc44e9db624f25675afed1b3c4eb7faa691fe087197a0f1b6232814a7940",
+      "archived_sha256": "c4dd1a1280981be988cf5405ae151e3935acc7a36f7c60b1e9692a127b3fb848"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f01.html",
+      "local_path": "cipher-wiki/films/f01.html",
+      "content_type": "text/html",
+      "bytes": 8382,
+      "source_sha256": "bfe6a58e3bd5f18d70da5c98c3df913dd050deb9f364111ec46bafa3e1129cf4",
+      "archived_sha256": "666bc18c159144bb60a5aaadaa7230b1ed03f38abe636b1ce9a474bb2019f580"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f02.html",
+      "local_path": "cipher-wiki/films/f02.html",
+      "content_type": "text/html",
+      "bytes": 8441,
+      "source_sha256": "8dfdf8af9bf4b71a934ff1a5ebb2c89eeb030d4f131f6669b9c54ad7d5bc138b",
+      "archived_sha256": "8f252b4a3bd06a9e23e5fefbd562b1f18496c907f440751d87b4245070226d9d"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f03.html",
+      "local_path": "cipher-wiki/films/f03.html",
+      "content_type": "text/html",
+      "bytes": 8017,
+      "source_sha256": "4cf938ab1826d3805b1a688b596587f94b8b0586aec879195161ab18500bed67",
+      "archived_sha256": "9a4a5a094fbf9bde086ee06527133c90d0a5d4785fa5e5fbcb4fdb26fa7f2456"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f04.html",
+      "local_path": "cipher-wiki/films/f04.html",
+      "content_type": "text/html",
+      "bytes": 8138,
+      "source_sha256": "77496eccf8356f09352e2e4fa24c798d20562e006b45e51ad682204d704f05c2",
+      "archived_sha256": "ceaf2f910f7fc3c886f849350f27a842e09352f9572339390fa42c63771ab69b"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f05.html",
+      "local_path": "cipher-wiki/films/f05.html",
+      "content_type": "text/html",
+      "bytes": 8076,
+      "source_sha256": "9cd03f6ee9268aea2d9a04f3f8057948c50561616f257ecdd90c638e14aacac8",
+      "archived_sha256": "8bde3486a461773229adc35c0d367cb3f8bc4e87dfe374c77012a05b8f7a74f6"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f06.html",
+      "local_path": "cipher-wiki/films/f06.html",
+      "content_type": "text/html",
+      "bytes": 8011,
+      "source_sha256": "2d12bbef6dc2ee0bf27cc54875e2b7209190165b0a773df5d7d79282855f5dc2",
+      "archived_sha256": "3f8b8d767b9e13849f1e35a5bf73a4d85ebc219df227f818d13e538812627490"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f07.html",
+      "local_path": "cipher-wiki/films/f07.html",
+      "content_type": "text/html",
+      "bytes": 8334,
+      "source_sha256": "60e06aaf6a815cf6ae1c96feb19e20f86eb068dba585a1d922192b2cb8bde095",
+      "archived_sha256": "a87c5bdd88227ac77a618fb44c4412c05d6c9f2107a68c1493bb1c4d95ec1566"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f08.html",
+      "local_path": "cipher-wiki/films/f08.html",
+      "content_type": "text/html",
+      "bytes": 7935,
+      "source_sha256": "08ca029aae7fb72839c3dc8daaf774f2de75cf7794ae97fe4db58d54b527a3cd",
+      "archived_sha256": "b4ace460e5c25ad261d24f1563dc75e2f055e97f481d913bd6a9ad6e5fcf9680"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f09.html",
+      "local_path": "cipher-wiki/films/f09.html",
+      "content_type": "text/html",
+      "bytes": 14444,
+      "source_sha256": "5249b030644884181856cf990e25834276001ab916c74381520ad87ae3b4ce68",
+      "archived_sha256": "e260d0c96173bab6a6c0df8d8b873e53e7c811b98478c0ab3ca1782baede9703"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f10.html",
+      "local_path": "cipher-wiki/films/f10.html",
+      "content_type": "text/html",
+      "bytes": 8116,
+      "source_sha256": "da3a036b35fc4f74428f118d049a9b8e063af7158e4bd0b612fb2ba5f1b2fb94",
+      "archived_sha256": "8740e99d7e3b890722c2eb015b22a2c1512cd28cee71a9220771ab6af2493d43"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f11.html",
+      "local_path": "cipher-wiki/films/f11.html",
+      "content_type": "text/html",
+      "bytes": 8141,
+      "source_sha256": "d181c543b4a3c8f3dbffbea46dee46ec78170334929f753fb019c421fdd0adea",
+      "archived_sha256": "4844231daad921ea5ce2a594911426f762269e3a664861b38bd74a44796708f9"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f12.html",
+      "local_path": "cipher-wiki/films/f12.html",
+      "content_type": "text/html",
+      "bytes": 7842,
+      "source_sha256": "f32649aa78b3fd0a2be8dc1fdd878cd14f0b05fc8171920d81dd6b43d61d28a5",
+      "archived_sha256": "a6fbbc0d31e57c5dba7300a78d83195574b56957e4ee5870c711cf27afaaf633"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f13.html",
+      "local_path": "cipher-wiki/films/f13.html",
+      "content_type": "text/html",
+      "bytes": 7910,
+      "source_sha256": "fe7ae48b15ce74a65561e25db7e15247c684a0e0490f3b6dd96b4c5b5226d417",
+      "archived_sha256": "a30d54dda3ffbda3694f62154f6b3887fc0da53277a43842e56e0ed9c47a5979"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f14.html",
+      "local_path": "cipher-wiki/films/f14.html",
+      "content_type": "text/html",
+      "bytes": 16701,
+      "source_sha256": "de3b5fca597525eb3a7c6d4ae7e626f09e27ca3c52c35e75d3ee5b5c99cd0c30",
+      "archived_sha256": "bf93c28a63b42fdc2811846783d4a842c0279aa08366b7cae0d38b9bac139c16"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/f15.html",
+      "local_path": "cipher-wiki/films/f15.html",
+      "content_type": "text/html",
+      "bytes": 8511,
+      "source_sha256": "f7c4a261d3a1d39170d9692b91a19cae8d4e3a0957504820f126e0b7c8f97739",
+      "archived_sha256": "970fc10ad60b8209477fff5bba55bf4e437a0ddcd2e2c09216a0637e27aad559"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/films/index.html",
+      "local_path": "cipher-wiki/films/index.html",
+      "content_type": "text/html",
+      "bytes": 8261,
+      "source_sha256": "ea906aae1e85836feef3875a5268ac6c016b95a5b0f668fb5a10d21baa0eb837",
+      "archived_sha256": "2a30a5e91a1b9b00b3c4d87dbe406937138364095bb66a9dcb52f8f7fa55453a"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/index.html",
+      "local_path": "cipher-wiki/index.html",
+      "content_type": "text/html",
+      "bytes": 10473,
+      "source_sha256": "68aaa9015fa218dba91562754b7bb31ec2ff8919e53f3b0e1ba865c8cb24a195",
+      "archived_sha256": "de6e5c8bb5c8188b70ec83c0dd6a1be97ead57b8010b5e925b19a1f593a2ca48"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20Chrome%20Vector%20-%20Dangerous%20Silhouette%20(1986).mp3",
+      "local_path": "cipher-wiki/media/audio/CIPHER - Chrome Vector - Dangerous Silhouette (1986).mp3",
+      "content_type": "audio/mpeg",
+      "bytes": 6347543,
+      "source_sha256": "6114033a103ba1f5621de8bbcab5999fd4080072b00688c142ebccc0934b3ee2",
+      "archived_sha256": "6114033a103ba1f5621de8bbcab5999fd4080072b00688c142ebccc0934b3ee2"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20Marcus%20Obi%20-%20Never%20Belonged%20(2023).flac",
+      "local_path": "cipher-wiki/media/audio/CIPHER - Marcus Obi - Never Belonged (2023).flac",
+      "content_type": "audio/flac",
+      "bytes": 35642394,
+      "source_sha256": "ad9f650c73839cdcb2404b4a63224a8af454c92b43a1ec5e297d3f06b3f04eb8",
+      "archived_sha256": "ad9f650c73839cdcb2404b4a63224a8af454c92b43a1ec5e297d3f06b3f04eb8"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20Parallel%20Signal%20and%20Bethany%20Mann%20-%20In%20Plain%20Sight%20(2002).flac",
+      "local_path": "cipher-wiki/media/audio/CIPHER - Parallel Signal and Bethany Mann - In Plain Sight (2002).flac",
+      "content_type": "audio/flac",
+      "bytes": 31212741,
+      "source_sha256": "f223600a8993baed4dc5c8ba86d49267322b201d9452e35a70b81a32b3dab764",
+      "archived_sha256": "f223600a8993baed4dc5c8ba86d49267322b201d9452e35a70b81a32b3dab764"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20Soraya%20Nile%20-%20The%20Weight%20of%20Kingdoms%20(2006).flac",
+      "local_path": "cipher-wiki/media/audio/CIPHER - Soraya Nile - The Weight of Kingdoms (2006).flac",
+      "content_type": "audio/flac",
+      "bytes": 30628456,
+      "source_sha256": "b2019932425790cb60862452e00168e68df11e5a1933e96c98e8d80657521a16",
+      "archived_sha256": "b2019932425790cb60862452e00168e68df11e5a1933e96c98e8d80657521a16"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20VANTA%20-%20Fracture%20(2018).flac",
+      "local_path": "cipher-wiki/media/audio/CIPHER - VANTA - Fracture (2018).flac",
+      "content_type": "audio/flac",
+      "bytes": 32225981,
+      "source_sha256": "1af6d615c21115a12b43947b3d19bc2ca8a87fc309917428e1576cc3ef5fdbf6",
+      "archived_sha256": "1af6d615c21115a12b43947b3d19bc2ca8a87fc309917428e1576cc3ef5fdbf6"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20Vivienne%20Clair%20-%20Agent%20Alone%20(1970).flac",
+      "local_path": "cipher-wiki/media/audio/CIPHER - Vivienne Clair - Agent Alone (1970).flac",
+      "content_type": "audio/flac",
+      "bytes": 36467708,
+      "source_sha256": "21bdb3cc4eae59bd86977f6d285802035ddf7df5dbfb437c0499644e66e56c53",
+      "archived_sha256": "21bdb3cc4eae59bd86977f6d285802035ddf7df5dbfb437c0499644e66e56c53"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20Vivienne%20Clair%20-%20Crimson%20Meridian%20(1973).flac",
+      "local_path": "cipher-wiki/media/audio/CIPHER - Vivienne Clair - Crimson Meridian (1973).flac",
+      "content_type": "audio/flac",
+      "bytes": 23736813,
+      "source_sha256": "5e02f0b31a291cbd6667dbb671f82614e9bee8f85c97cb08d127def3f88ee676",
+      "archived_sha256": "5e02f0b31a291cbd6667dbb671f82614e9bee8f85c97cb08d127def3f88ee676"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20Vivienne%20Clair%20-%20Lisbon%20Frequency%20(1967).flac",
+      "local_path": "cipher-wiki/media/audio/CIPHER - Vivienne Clair - Lisbon Frequency (1967).flac",
+      "content_type": "audio/flac",
+      "bytes": 23537838,
+      "source_sha256": "698a90d09198707ac690feff12748d659c94c7dcef3124f65b0a4c673ab6389c",
+      "archived_sha256": "698a90d09198707ac690feff12748d659c94c7dcef3124f65b0a4c673ab6389c"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/audio/CIPHER%20-%20Vivienne%20Clair%20-%20Shadow%20and%20Steel%20(1965).flac",
+      "local_path": "cipher-wiki/media/audio/CIPHER - Vivienne Clair - Shadow and Steel (1965).flac",
+      "content_type": "audio/flac",
+      "bytes": 25875313,
+      "source_sha256": "97233eafd4be55489da47d8fbfa9e1be03ef5f6a59639d288140e50839b22e69",
+      "archived_sha256": "97233eafd4be55489da47d8fbfa9e1be03ef5f6a59639d288140e50839b22e69"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/CIPHER%20-%20Crimson%20Meridian%20Poster%20(1973).png",
+      "local_path": "cipher-wiki/media/images/CIPHER - Crimson Meridian Poster (1973).png",
+      "content_type": "image/png",
+      "bytes": 1538937,
+      "source_sha256": "6f99805d96588cdcc4789ee75293cc975831e68795c0d0b99ea2b4528a773b52",
+      "archived_sha256": "6f99805d96588cdcc4789ee75293cc975831e68795c0d0b99ea2b4528a773b52"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/CIPHER%20-%20Shadow%20and%20Steel%20Poster%20(1965).png",
+      "local_path": "cipher-wiki/media/images/CIPHER - Shadow and Steel Poster (1965).png",
+      "content_type": "image/png",
+      "bytes": 1391773,
+      "source_sha256": "3f4da8ce60b0881a5d1e78e81205c30a5435e173ed1caed0fe9fd2191265c818",
+      "archived_sha256": "3f4da8ce60b0881a5d1e78e81205c30a5435e173ed1caed0fe9fd2191265c818"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/CIPHER%20-%20The%20Lisbon%20Frequency%20Poster%20(1967).jpg",
+      "local_path": "cipher-wiki/media/images/CIPHER - The Lisbon Frequency Poster (1967).jpg",
+      "content_type": "image/jpeg",
+      "bytes": 288152,
+      "source_sha256": "7ac052933e96f48b7837949464f32fddc90101eca84bfe264ea78e33f863abd3",
+      "archived_sha256": "7ac052933e96f48b7837949464f32fddc90101eca84bfe264ea78e33f863abd3"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Declan%20Ward%20-%20Actors%20Composite.png",
+      "local_path": "cipher-wiki/media/images/Declan Ward - Actors Composite.png",
+      "content_type": "image/png",
+      "bytes": 1797139,
+      "source_sha256": "ace66f265b1c96e33e6bf4227e99730bac023e7820e53a9c0c81e7148e742ead",
+      "archived_sha256": "ace66f265b1c96e33e6bf4227e99730bac023e7820e53a9c0c81e7148e742ead"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Hugh%20Cavender%20(1965).png",
+      "local_path": "cipher-wiki/media/images/Hugh Cavender (1965).png",
+      "content_type": "image/png",
+      "bytes": 1176261,
+      "source_sha256": "93c92bfde95769e58811334f234ac032f94c13feaa589043f1b99a076e16f35f",
+      "archived_sha256": "93c92bfde95769e58811334f234ac032f94c13feaa589043f1b99a076e16f35f"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/James%20Calloway%20(2006).png",
+      "local_path": "cipher-wiki/media/images/James Calloway (2006).png",
+      "content_type": "image/png",
+      "bytes": 1636373,
+      "source_sha256": "0442066bf79548815b93b4e0c6f2f9b24a6e3afe3ce8bc88627e4c0162a08759",
+      "archived_sha256": "0442066bf79548815b93b4e0c6f2f9b24a6e3afe3ce8bc88627e4c0162a08759"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/James%20Calloway%20-%20Fracture%20Point%20Filming%20Chase%20Sequence%20(2017).png",
+      "local_path": "cipher-wiki/media/images/James Calloway - Fracture Point Filming Chase Sequence (2017).png",
+      "content_type": "image/png",
+      "bytes": 1476747,
+      "source_sha256": "b57867db71305a6473d6d4db75b8c393c045fa2f3c7ae95420480925fdb1cfbb",
+      "archived_sha256": "b57867db71305a6473d6d4db75b8c393c045fa2f3c7ae95420480925fdb1cfbb"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/James%20Calloway%20-%20Fracture%20Point%20Premiere%20(2018).png",
+      "local_path": "cipher-wiki/media/images/James Calloway - Fracture Point Premiere (2018).png",
+      "content_type": "image/png",
+      "bytes": 1682630,
+      "source_sha256": "5f812253d15b74786cc0a4512ffbe0ae2f4a58c0a36f2242c53a408bc3fbb3a7",
+      "archived_sha256": "5f812253d15b74786cc0a4512ffbe0ae2f4a58c0a36f2242c53a408bc3fbb3a7"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Logo%20-%20Meridian%20Pictures.png",
+      "local_path": "cipher-wiki/media/images/Logo - Meridian Pictures.png",
+      "content_type": "image/png",
+      "bytes": 406807,
+      "source_sha256": "430314359bcd38140b340ac6a0c5222ace5aca9bca2626b0dedb4039fa1a5b0b",
+      "archived_sha256": "430314359bcd38140b340ac6a0c5222ace5aca9bca2626b0dedb4039fa1a5b0b"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Logo%20-%20The%20Halcyon%20Group.png",
+      "local_path": "cipher-wiki/media/images/Logo - The Halcyon Group.png",
+      "content_type": "image/png",
+      "bytes": 438761,
+      "source_sha256": "597027701fc2894957b78fab76c6d0ff7b812ce809e1cd957217d458efb132e4",
+      "archived_sha256": "597027701fc2894957b78fab76c6d0ff7b812ce809e1cd957217d458efb132e4"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Marcus%20Obi%20(2023).png",
+      "local_path": "cipher-wiki/media/images/Marcus Obi (2023).png",
+      "content_type": "image/png",
+      "bytes": 1306313,
+      "source_sha256": "ce0aecffafab8fbfd9638f91d9503b48797f56a5b2e1300a7060515a71822ddd",
+      "archived_sha256": "ce0aecffafab8fbfd9638f91d9503b48797f56a5b2e1300a7060515a71822ddd"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Marcus%20Obi%20and%20%20Adaeze%20Okoye%20-%20The%20Last%20Directorate%20Premiere%20(2023).png",
+      "local_path": "cipher-wiki/media/images/Marcus Obi and  Adaeze Okoye - The Last Directorate Premiere (2023).png",
+      "content_type": "image/png",
+      "bytes": 1675213,
+      "source_sha256": "318ee3da91770db02d3ea3e5ab900eef179c726f8cf953a617b02a3cac6050b4",
+      "archived_sha256": "318ee3da91770db02d3ea3e5ab900eef179c726f8cf953a617b02a3cac6050b4"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Roland%20Mace%20(1977).png",
+      "local_path": "cipher-wiki/media/images/Roland Mace (1977).png",
+      "content_type": "image/png",
+      "bytes": 1551117,
+      "source_sha256": "c9aa38493c132227a7493e14df1c7911606448b2f55e412de0582c2767e9e42b",
+      "archived_sha256": "c9aa38493c132227a7493e14df1c7911606448b2f55e412de0582c2767e9e42b"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Screenshot%20-%20Zero%20Meridian%20Video%20Game%20(1997).png",
+      "local_path": "cipher-wiki/media/images/Screenshot - Zero Meridian Video Game (1997).png",
+      "content_type": "image/png",
+      "bytes": 1261821,
+      "source_sha256": "ba4bd2a4927bd884a1b0128b5feee6882647fb83a16b22ae5b723cfc6dd2205f",
+      "archived_sha256": "ba4bd2a4927bd884a1b0128b5feee6882647fb83a16b22ae5b723cfc6dd2205f"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/media/images/Stefan%20Bauer%20(1991).png",
+      "local_path": "cipher-wiki/media/images/Stefan Bauer (1991).png",
+      "content_type": "image/png",
+      "bytes": 1471664,
+      "source_sha256": "b836aca3ca2898a904c653e8cf78dfb455a332830f2438fd599f4e9ebf346c61",
+      "archived_sha256": "b836aca3ca2898a904c653e8cf78dfb455a332830f2438fd599f4e9ebf346c61"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/org/hexon.html",
+      "local_path": "cipher-wiki/org/hexon.html",
+      "content_type": "text/html",
+      "bytes": 10039,
+      "source_sha256": "d5419875fb169d2e4ae9c889cc3540cfdaf8280ca24c60751074a7817fadeb8b",
+      "archived_sha256": "db68b2ab11205515524c0c52a771665c84bf7a24c9332c8e5307e8ae969c89db"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/org/sentinel.html",
+      "local_path": "cipher-wiki/org/sentinel.html",
+      "content_type": "text/html",
+      "bytes": 9328,
+      "source_sha256": "6142dd8780ef5b02fa192cceb53967bdc8d05778e05210e0ae03b4cf13ed79a9",
+      "archived_sha256": "3758b6bd7b8fc877da84674fd47c54ec1f17fbf3c23d15e2abf7b1a3e0634c87"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/production/index.html",
+      "local_path": "cipher-wiki/production/index.html",
+      "content_type": "text/html",
+      "bytes": 17923,
+      "source_sha256": "3e0275ee2962585e63dc948f6e28d8168ec918677e47642af3f2b3b3db56ea2f",
+      "archived_sha256": "a33a266b38af5fbc9b53948f762331cf981d1dc8a039a96a5ce56d7dfe778d8d"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/style.css",
+      "local_path": "cipher-wiki/style.css",
+      "content_type": "text/css",
+      "bytes": 9734,
+      "source_sha256": "227b2f25d5234d8a5793c38f8aca42b7765ef41ebcd1b79588d731dfdb101626",
+      "archived_sha256": "c62c73a95635488f36f0649460f0cc052503f7aa2a8429ab07a08446f4cfaed2"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/actors_bauer.html",
+      "local_path": "cipher-wiki/talk/actors_bauer.html",
+      "content_type": "text/html",
+      "bytes": 9669,
+      "source_sha256": "e1d3313783e19b82b4bb6ae1dbddede553dd4f48f0c36cd6b27e3a291302fcfe",
+      "archived_sha256": "e1d3313783e19b82b4bb6ae1dbddede553dd4f48f0c36cd6b27e3a291302fcfe"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/actors_calloway.html",
+      "local_path": "cipher-wiki/talk/actors_calloway.html",
+      "content_type": "text/html",
+      "bytes": 9722,
+      "source_sha256": "30789590de63fc64641d08bc80d93469c330f87ffb7791a5ba89e3b51d7d343e",
+      "archived_sha256": "30789590de63fc64641d08bc80d93469c330f87ffb7791a5ba89e3b51d7d343e"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/actors_cavender.html",
+      "local_path": "cipher-wiki/talk/actors_cavender.html",
+      "content_type": "text/html",
+      "bytes": 10601,
+      "source_sha256": "621bc5fc8e063f51c6cbac978c667b6b74ab15ce65f0389a0f1cf1db5d975376",
+      "archived_sha256": "621bc5fc8e063f51c6cbac978c667b6b74ab15ce65f0389a0f1cf1db5d975376"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/actors_mace.html",
+      "local_path": "cipher-wiki/talk/actors_mace.html",
+      "content_type": "text/html",
+      "bytes": 9773,
+      "source_sha256": "42c91c2829819a88e919f295b4171fd85387031ec3a71d97988919af6060c765",
+      "archived_sha256": "42c91c2829819a88e919f295b4171fd85387031ec3a71d97988919af6060c765"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/actors_obi.html",
+      "local_path": "cipher-wiki/talk/actors_obi.html",
+      "content_type": "text/html",
+      "bytes": 8634,
+      "source_sha256": "a1325f702d9f7e68d82290c489d9b9a418e6405b752ac29e8ce6c6fc33d5d2c5",
+      "archived_sha256": "a1325f702d9f7e68d82290c489d9b9a418e6405b752ac29e8ce6c6fc33d5d2c5"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/characters_ward.html",
+      "local_path": "cipher-wiki/talk/characters_ward.html",
+      "content_type": "text/html",
+      "bytes": 10454,
+      "source_sha256": "633afa7634c4604312233abc89f600691b3c1d98f1b1e0daeba8fe05591101ea",
+      "archived_sha256": "633afa7634c4604312233abc89f600691b3c1d98f1b1e0daeba8fe05591101ea"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f01.html",
+      "local_path": "cipher-wiki/talk/f01.html",
+      "content_type": "text/html",
+      "bytes": 11609,
+      "source_sha256": "8c02ee30d424088fbe849c5c2f806d7301f4e40705f8fa767b04c7e3edaacd3d",
+      "archived_sha256": "8c02ee30d424088fbe849c5c2f806d7301f4e40705f8fa767b04c7e3edaacd3d"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f02.html",
+      "local_path": "cipher-wiki/talk/f02.html",
+      "content_type": "text/html",
+      "bytes": 12264,
+      "source_sha256": "9ed5adfa584062558568e37de4ee91e9ed4387311e47e8d8105137bcf7243077",
+      "archived_sha256": "9ed5adfa584062558568e37de4ee91e9ed4387311e47e8d8105137bcf7243077"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f03.html",
+      "local_path": "cipher-wiki/talk/f03.html",
+      "content_type": "text/html",
+      "bytes": 11563,
+      "source_sha256": "3b9c8ba5d1156fd33e2c11d859ac8c84fa95d147472c5e427bfc9e478af88372",
+      "archived_sha256": "3b9c8ba5d1156fd33e2c11d859ac8c84fa95d147472c5e427bfc9e478af88372"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f04.html",
+      "local_path": "cipher-wiki/talk/f04.html",
+      "content_type": "text/html",
+      "bytes": 11182,
+      "source_sha256": "0a48337252b0c1b874059adc9a9e75fcfe214405884afa4e802451465db50e3c",
+      "archived_sha256": "0a48337252b0c1b874059adc9a9e75fcfe214405884afa4e802451465db50e3c"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f05.html",
+      "local_path": "cipher-wiki/talk/f05.html",
+      "content_type": "text/html",
+      "bytes": 10768,
+      "source_sha256": "99a79407b8ee3c1f977854e277732d7db550337c1db69a0af08a84ad4d34aaa8",
+      "archived_sha256": "d04b4e67476e34f2352365bcbc332cfa24a0ab36233c0b05a209e9ea4e2e63c8"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f06.html",
+      "local_path": "cipher-wiki/talk/f06.html",
+      "content_type": "text/html",
+      "bytes": 10298,
+      "source_sha256": "3807432326ad824cb8c9c0cc8b25dfbf57262300a89573236a574fe9afa883d4",
+      "archived_sha256": "3807432326ad824cb8c9c0cc8b25dfbf57262300a89573236a574fe9afa883d4"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f07.html",
+      "local_path": "cipher-wiki/talk/f07.html",
+      "content_type": "text/html",
+      "bytes": 10870,
+      "source_sha256": "5e8d40ebcb05078be1c8f581d819eff8b6bf22ca638d5ee62635921ecec6a0a7",
+      "archived_sha256": "5e8d40ebcb05078be1c8f581d819eff8b6bf22ca638d5ee62635921ecec6a0a7"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f08.html",
+      "local_path": "cipher-wiki/talk/f08.html",
+      "content_type": "text/html",
+      "bytes": 10634,
+      "source_sha256": "5d57038a9bb403616d430791b0a68f45c9d7912f46193b2d9a9621992b7a3ac1",
+      "archived_sha256": "5d57038a9bb403616d430791b0a68f45c9d7912f46193b2d9a9621992b7a3ac1"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f09.html",
+      "local_path": "cipher-wiki/talk/f09.html",
+      "content_type": "text/html",
+      "bytes": 14275,
+      "source_sha256": "f64c098217802006c5307b54aa67cf3cf44dce0cb545575371a12f3f290f8c45",
+      "archived_sha256": "f64c098217802006c5307b54aa67cf3cf44dce0cb545575371a12f3f290f8c45"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f10.html",
+      "local_path": "cipher-wiki/talk/f10.html",
+      "content_type": "text/html",
+      "bytes": 9762,
+      "source_sha256": "a235a69e8a23705e62750db63c801787074fb28f5d910ea5257d3a0ac39a9db8",
+      "archived_sha256": "a235a69e8a23705e62750db63c801787074fb28f5d910ea5257d3a0ac39a9db8"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f11.html",
+      "local_path": "cipher-wiki/talk/f11.html",
+      "content_type": "text/html",
+      "bytes": 9751,
+      "source_sha256": "e376cdf0bd6d3a171dec05798e247baca13d1279b6990ff38e3a40aa4b2a598c",
+      "archived_sha256": "e376cdf0bd6d3a171dec05798e247baca13d1279b6990ff38e3a40aa4b2a598c"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f12.html",
+      "local_path": "cipher-wiki/talk/f12.html",
+      "content_type": "text/html",
+      "bytes": 9378,
+      "source_sha256": "823c14f3ae77c83cc5705ab191f7efc4d4a3c37aefbdbe3e292e133a0bad38d6",
+      "archived_sha256": "823c14f3ae77c83cc5705ab191f7efc4d4a3c37aefbdbe3e292e133a0bad38d6"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f13.html",
+      "local_path": "cipher-wiki/talk/f13.html",
+      "content_type": "text/html",
+      "bytes": 9996,
+      "source_sha256": "48ac5fa6893ddd858c1dcd293551832fe56e2e4f57a9a248c7d7ed3bdca4dd89",
+      "archived_sha256": "48ac5fa6893ddd858c1dcd293551832fe56e2e4f57a9a248c7d7ed3bdca4dd89"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f14.html",
+      "local_path": "cipher-wiki/talk/f14.html",
+      "content_type": "text/html",
+      "bytes": 9827,
+      "source_sha256": "7e2dad0fe283f52a6c1e350a619670e9e349cc2bc1d23c6c3104d7b2d6b32a86",
+      "archived_sha256": "7e2dad0fe283f52a6c1e350a619670e9e349cc2bc1d23c6c3104d7b2d6b32a86"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/f15.html",
+      "local_path": "cipher-wiki/talk/f15.html",
+      "content_type": "text/html",
+      "bytes": 14996,
+      "source_sha256": "4e611cc662e7fe14f51a47f8be5a019cd27364bc3a914d170ae940991ebafa32",
+      "archived_sha256": "4e611cc662e7fe14f51a47f8be5a019cd27364bc3a914d170ae940991ebafa32"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/films_index.html",
+      "local_path": "cipher-wiki/talk/films_index.html",
+      "content_type": "text/html",
+      "bytes": 10504,
+      "source_sha256": "7d8d17d07b57395cdfbb7935a6a616242d2d6cb576d00481503fd72860f5d4fe",
+      "archived_sha256": "7d8d17d07b57395cdfbb7935a6a616242d2d6cb576d00481503fd72860f5d4fe"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/index.html",
+      "local_path": "cipher-wiki/talk/index.html",
+      "content_type": "text/html",
+      "bytes": 13446,
+      "source_sha256": "3cb1b10b86cdda42f1bbe258785db2a5b31ef11c63386585c0eea4b161a42f9f",
+      "archived_sha256": "61a6e8ddba3c0dd9db6108517b8a6bb4952fb5d8ca32f48fc6e16e9edd5a68e9"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/org_hexon.html",
+      "local_path": "cipher-wiki/talk/org_hexon.html",
+      "content_type": "text/html",
+      "bytes": 9489,
+      "source_sha256": "b58ab029d6039ed2dfb9dd580b6f1bc61059ec394e4e8c4ce0a59103123f86a7",
+      "archived_sha256": "b58ab029d6039ed2dfb9dd580b6f1bc61059ec394e4e8c4ce0a59103123f86a7"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/org_sentinel.html",
+      "local_path": "cipher-wiki/talk/org_sentinel.html",
+      "content_type": "text/html",
+      "bytes": 12445,
+      "source_sha256": "a4c50e0ecae1d30cde1582f7125dac109cee390ed89b4c208e1e61fc2d06e43f",
+      "archived_sha256": "a4c50e0ecae1d30cde1582f7125dac109cee390ed89b4c208e1e61fc2d06e43f"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/style.css",
+      "local_path": "cipher-wiki/talk/style.css",
+      "content_type": "text/css",
+      "bytes": 9380,
+      "source_sha256": "762403da62b9189cd856c3e3796c46e23da69316177e2ffca0b57db231200c71",
+      "archived_sha256": "6a7a1d4f6a6c29f79d78339ed70253e6fe22ef08dd64941d35a2043293cf415c"
+    },
+    {
+      "source_url": "https://ctf313.com/cipher-wiki/talk/talk_production.html",
+      "local_path": "cipher-wiki/talk/talk_production.html",
+      "content_type": "text/html",
+      "bytes": 36627,
+      "source_sha256": "b73496be52fa25d0b1372fab1d5fbcfbaa8c21782cb66b7fafd45b73e8db5ac1",
+      "archived_sha256": "8e7a32ad3d232edf41d7f335b86b35b35635e0d14aabba8cf581103f5630486e"
+    }
+  ]
+}

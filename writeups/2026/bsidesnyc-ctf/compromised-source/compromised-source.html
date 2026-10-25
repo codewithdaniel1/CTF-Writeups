@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f2ea" />
+  <meta name="description" content="A BSidesNYC CTF walkthrough for Compromised Source: trace an insider's unusual knowledge on the CipherWiki Sentinel talk page and decode its hidden flag." />
+  <meta property="og:title" content="Compromised Source | BSidesNYC CTF Writeup" />
+  <meta property="og:description" content="Follow a suspicious Sentinel discussion to a hidden Base64 flag in the page source." />
+  <meta property="og:type" content="article" />
+  <title>Compromised Source | BSidesNYC CTF Writeup | Daniel Peng</title>
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../styles.css?v=classified-writeup" />
+  <script src="../../../../script.js?v=20261021a" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" target="_blank" rel="noopener noreferrer">Skip to content</a>
+  <header class="site-header"><div class="header-inner wrap">
+    <a class="brand" href="https://codewithdaniel1.github.io/index.html" aria-label="Daniel Peng, home" target="_blank" rel="noopener noreferrer"><span class="brand-mark">dp<span class="brand-period">.</span></span><span class="brand-name">Daniel Peng</span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="https://codewithdaniel1.github.io/index.html" target="_blank" rel="noopener noreferrer">Home</a><a href="https://codewithdaniel1.github.io/project.html" target="_blank" rel="noopener noreferrer">Project</a><a href="https://codewithdaniel1.github.io/research.html" target="_blank" rel="noopener noreferrer">Research</a><a href="https://codewithdaniel1.github.io/ctf.html" target="_blank" rel="noopener noreferrer">CTF</a></nav>
+  </div></header>
+
+  <main class="inner-main wrap prose" id="main">
+    <a class="back-link" href="https://codewithdaniel1.github.io/competitions/bsidesnyc.html#writeups" data-back-to-ctf>← Back to BSidesNYC CTF writeups</a>
+    <header class="inner-hero"><p class="section-index">CTF WRITEUP / BSIDESNYC CTF</p><div>
+      <h1>Compromised Source<span class="period">.</span></h1>
+      <p class="lead">A Sentinel talk-page discussion contains a user whose expertise goes beyond ordinary fan knowledge. Inspect the post markup to uncover the hidden flag.</p>
+      <div class="article-meta"><span>Forensics · Wiki</span><span>BSidesNYC CTF · 100 points</span><span>October 17, 2026</span></div>
+    </div></header>
+
+    <section class="inner-section" id="challenge" aria-labelledby="challenge-title"><h2 id="challenge-title">The challenge</h2><div class="section-content">
+      <p>“Agent,</p>
+      <p>Someone is letting on more than they should.</p>
+      <p>They are talking about Sentinel.</p>
+      <p>Find the source.”</p>
+      <p>Start at the <a class="inline-link" href="../classified/assets/original/cipher-wiki/index.html" target="_blank" rel="noopener noreferrer">archived CipherWiki website</a>. This local copy preserves the challenge pages and their supporting files.</p>
+      <p class="quiet-note">Original challenge URL: <a class="inline-link" href="https://ctf313.com/cipher-wiki/index.html" target="_blank" rel="noopener noreferrer">ctf313.com/cipher-wiki/index.html</a>.</p>
+    </div></section>
+
+    <section class="inner-section" id="find-source" aria-labelledby="find-source-title"><h2 id="find-source-title">Find the source of the leak</h2><div class="section-content">
+      <p>Open the <a class="inline-link" href="../classified/assets/original/cipher-wiki/org/sentinel.html" target="_blank" rel="noopener noreferrer">Sentinel article</a> and follow its Talk tab to the <a class="inline-link" href="../classified/assets/original/cipher-wiki/talk/org_sentinel.html" target="_blank" rel="noopener noreferrer">Sentinel talk page</a>. Review the discussion about the numbering of Section 13. In the post explaining how real intelligence sections are organized, <code>Morthwaite</code> speaks with oddly specific confidence about how intelligence functions are divided and why a technical section might sit outside the usual numbering.</p>
+      <p>That knowledge is the tell. The poster is not just speculating about the fictional organization; the post contains a second clue in an element that is hidden from the rendered page with the CSS class <code>null</code>.</p>
+      <pre><code>&lt;div class="null"&gt;RkxBR3syMjFCfQ==&lt;/div&gt;</code></pre>
+      <p>Decode the Base64 text:</p>
+      <pre><code>python3 -c 'import base64; print(base64.b64decode("RkxBR3syMjFCfQ==").decode())'</code></pre>
+      <p>The decoded text is <code>FLAG{221B}</code>. The suspicious source is <code>Morthwaite</code>, and the encoded string in that post provides the flag.</p>
+    </div></section>
+
+    <section class="inner-section" id="flag" aria-labelledby="flag-title"><h2 id="flag-title">Flag</h2><div class="section-content">
+      <pre class="writeup-flag"><code>FLAG{221B}</code></pre>
+      <p>The source is identified by the post’s unusually specific knowledge; the hidden Base64 clue decodes directly to the flag above.</p>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>Daniel Peng · New York</span><a href="https://codewithdaniel1.github.io/competitions/bsidesnyc.html#writeups" data-back-to-ctf>← Back to BSidesNYC CTF writeups</a></div></footer>
+</body>
+</html>

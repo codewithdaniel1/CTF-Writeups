@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="../_fonts/styles-85a053d27ec3.css" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px 60px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+}
+
+/* ── scan viewer shell ── */
+.viewer {
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.viewer-bar {
+  width: 100%;
+  background: #2c2c2c;
+  border: 1px solid #3a3a3a;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: monospace;
+  font-size: 11px;
+  color: #666;
+}
+.viewer-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #444;
+}
+.viewer-dot.red { background: #7a3a3a; }
+.viewer-dot.yellow { background: #7a6a3a; }
+.viewer-dot.green { background: #3a6a3a; }
+.viewer-filename {
+  margin-left: auto;
+  color: #555;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+/* ── the document itself ── */
+.document {
+  width: 100%;
+  background: #e8e0cc;
+  position: relative;
+  padding: 72px 80px 90px;
+  box-shadow:
+    0 0 0 1px #c8b89a,
+    0 4px 40px rgba(0,0,0,0.6),
+    inset 0 0 120px rgba(0,0,0,0.04);
+
+  /* paper texture via layered gradients */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,
+      rgba(180,160,120,0.12) 0%,
+      rgba(220,200,160,0.04) 15%,
+      rgba(200,180,140,0.06) 40%,
+      rgba(215,195,155,0.03) 70%,
+      rgba(190,170,130,0.10) 100%
+    ),
+    linear-gradient(92deg,
+      rgba(160,140,100,0.08) 0%,
+      transparent 8%,
+      transparent 92%,
+      rgba(160,140,100,0.06) 100%
+    );
+  background-color: #e4dac4;
+}
+
+/* scan line overlay */
+.document::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.012) 3px,
+    rgba(0,0,0,0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* slight skew — imperfect scan */
+.document-inner {
+  transform: rotate(-0.18deg);
+  position: relative;
+}
+
+/* ── scan artifacts ── */
+.artifact {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+}
+.artifact-fold {
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(180deg, rgba(100,80,50,0.25), transparent);
+}
+.artifact-crease-h {
+  top: 38%;
+  left: -10px; right: -10px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(100,80,50,0.18) 10%,
+    rgba(120,95,60,0.22) 50%,
+    rgba(100,80,50,0.14) 90%,
+    transparent 100%
+  );
+  transform: rotate(0.08deg);
+}
+.artifact-crease-v {
+  top: 0; bottom: 0;
+  left: 44%;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(100,80,50,0.12) 20%,
+    rgba(120,95,60,0.18) 60%,
+    rgba(100,80,50,0.08) 85%,
+    transparent 100%
+  );
+}
+.artifact-stain {
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(130,100,60,0.12) 0%, transparent 70%);
+}
+.artifact-stain-1 {
+  width: 90px; height: 60px;
+  top: 18px; right: 60px;
+  transform: rotate(20deg);
+}
+.artifact-stain-2 {
+  width: 40px; height: 30px;
+  bottom: 120px; left: 44px;
+  transform: rotate(-8deg);
+  opacity: 0.7;
+}
+.artifact-edge-dark {
+  top: 0; bottom: 0; left: 0;
+  width: 6px;
+  background: linear-gradient(90deg, rgba(80,60,30,0.14), transparent);
+}
+
+/* ── redaction ── */
+.redacted {
+  background: #1a1512;
+  color: #1a1512;
+  display: inline-block;
+  user-select: none;
+  position: relative;
+  letter-spacing: 0.05em;
+  border-radius: 1px;
+  /* slight imperfection in redaction edges */
+  box-shadow: 1px 0 0 #1a1512, -1px 0 0 #1a1512;
+}
+.redacted-partial {
+  background: #1a1512;
+  color: #1a1512;
+  display: inline-block;
+  user-select: none;
+  opacity: 0.88;
+}
+
+/* ── typography ── */
+.doc-header {
+  text-align: center;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.letterhead-top {
+  font-family: 'Special Elite', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #3a3020;
+  margin-bottom: 6px;
+}
+
+.letterhead-org {
+  font-family: 'Special Elite', serif;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: #2a2215;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.letterhead-sub {
+  font-family: 'Special Elite', serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: #5a4a30;
+  text-transform: uppercase;
+}
+
+.letterhead-rule {
+  border: none;
+  border-top: 2px solid #2a2215;
+  margin: 10px 0 4px;
+}
+.letterhead-rule-thin {
+  border: none;
+  border-top: 1px solid #2a2215;
+  margin: 3px 0 16px;
+}
+
+.stamp-classified {
+  display: inline-block;
+  border: 3px solid #7a1515;
+  color: #7a1515;
+  font-family: 'Special Elite', serif;
+  font-size: 15px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  transform: rotate(-2.4deg) translateY(-4px);
+  opacity: 0.82;
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
+
+.stamp-eyes-only {
+  display: inline-block;
+  border: 2px solid #7a1515;
+  color: #7a1515;
+  font-family: 'Special Elite', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  transform: rotate(-2.2deg);
+  opacity: 0.75;
+  position: absolute;
+  top: 22px;
+  right: -4px;
+}
+
+.meta-block {
+  margin: 0 0 28px;
+  font-size: 12.5px;
+  line-height: 2;
+  color: #2a2010;
+}
+.meta-block .meta-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0;
+}
+.meta-label {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.meta-value { }
+
+.doc-subject {
+  border-top: 1px solid #8a7a5a;
+  border-bottom: 1px solid #8a7a5a;
+  padding: 8px 0;
+  margin-bottom: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #1a1208;
+  text-transform: uppercase;
+}
+
+.doc-body {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #1e1608;
+}
+
+.doc-body p {
+  margin-bottom: 16px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.doc-body .indent {
+  margin-left: 40px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 24px 0 10px;
+  font-size: 12px;
+  border-bottom: 1px solid #8a7a5a;
+  padding-bottom: 3px;
+}
+
+.numbered-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.doc-footer {
+  margin-top: 40px;
+  border-top: 1px solid #8a7a5a;
+  padding-top: 18px;
+  font-size: 11.5px;
+  color: #3a3020;
+}
+
+.signature-block {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  font-size: 12px;
+}
+.sig-line {
+  border-bottom: 1px solid #2a2010;
+  margin-bottom: 4px;
+  height: 32px;
+  position: relative;
+}
+.sig-name {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: #4a3a20;
+}
+.sig-title {
+  font-size: 10.5px;
+  color: #6a5a40;
+  font-style: italic;
+}
+
+/* handwritten signature approximation */
+.sig-signed {
+  position: absolute;
+  bottom: 4px;
+  left: 8px;
+  font-family: 'Special Elite', serif;
+  font-size: 18px;
+  color: #1a3060;
+  transform: rotate(-3deg);
+  opacity: 0.85;
+  letter-spacing: -0.02em;
+}
+
+.stamp-received {
+  display: inline-block;
+  border: 2px solid #2a5a2a;
+  color: #2a5a2a;
+  font-family: 'Special Elite', serif;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  transform: rotate(1.8deg);
+  opacity: 0.7;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 16px;
+  display: block;
+  width: fit-content;
+}
+
+.page-number {
+  text-align: center;
+  font-size: 10px;
+  color: #7a6a4a;
+  letter-spacing: 0.15em;
+  margin-top: 28px;
+}
+
+/* faint ghost text — hidden in plain sight */
+.ghost-text {
+  color: #ddd4ba;
+  font-size: 10px;
+  font-family: 'Courier Prime', monospace;
+  letter-spacing: 0.05em;
+  margin-top: 40px;
+  text-align: center;
+  user-select: text;
+}
+
+/* ── page 2 separator ── */
+.page-break {
+  width: 100%;
+  height: 24px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 9px;
+  color: #444;
+  letter-spacing: 0.2em;
+}
+
+/* second page */
+.document.page-2 {
+  margin-top: 0;
+}
+
+.handwritten-note {
+  font-family: 'Special Elite', serif;
+  color: #1a3060;
+  font-size: 13px;
+  line-height: 1.7;
+  transform: rotate(-0.8deg);
+  display: inline-block;
+  margin: 8px 0;
+  opacity: 0.88;
+}
+
+.underline-hand {
+  text-decoration: underline;
+  text-decoration-color: #1a3060;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .document { padding: 40px 28px 60px; }
+  .stamp-classified { right: -20px; font-size: 11px; }
+  .signature-block { grid-template-columns: 1fr; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="viewer">
+
+  <!-- viewer chrome -->
+  <div class="viewer-bar">
+    <div class="viewer-dot red"></div>
+    <div class="viewer-dot yellow"></div>
+    <div class="viewer-dot green"></div>
+    <span style="margin-left:8px;">Document Viewer — Read Only</span>
+    <span class="viewer-filename">HG_OC7_MEMO_SCAN_001.pdf &nbsp;|&nbsp; Page 1 of 2 &nbsp;|&nbsp; 72 dpi</span>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="document">
+
+    <!-- scan artifacts -->
+    <div class="artifact artifact-fold"></div>
+    <div class="artifact artifact-crease-h"></div>
+    <div class="artifact artifact-crease-v"></div>
+    <div class="artifact artifact-stain artifact-stain-1"></div>
+    <div class="artifact artifact-stain artifact-stain-2"></div>
+    <div class="artifact artifact-edge-dark"></div>
+
+    <div class="document-inner">
+
+      <!-- letterhead -->
+      <div class="doc-header">
+        <div class="stamp-classified">CLASSIFIED</div>
+        <div class="stamp-eyes-only">EYES ONLY</div>
+        <div class="letterhead-top">Private &amp; Confidential &mdash; Executive Committee</div>
+        <div class="letterhead-org">The Halcyon Group</div>
+        <div class="letterhead-sub">Registered Office &mdash; St. James's, London &mdash; Est. 1963</div>
+        <hr class="letterhead-rule">
+        <hr class="letterhead-rule-thin">
+      </div>
+
+      <!-- meta -->
+      <div class="meta-block">
+        <div class="meta-row"><span class="meta-label">TO:</span><span class="meta-value">Executive Committee, Halcyon Group &mdash; Full Membership</span></div>
+        <div class="meta-row"><span class="meta-label">FROM:</span><span class="meta-value">Director, Operational Cover Division &mdash; OCD/<span class="redacted">RWH</span></span></div>
+        <div class="meta-row"><span class="meta-label">DATE:</span><span class="meta-value">14 March <span class="redacted">19</span>84</span></div>
+        <div class="meta-row"><span class="meta-label">REF:</span><span class="meta-value">OC-7 / CIPHER PRODUCTION SERIES / STATUS REVIEW &mdash; CYCLE 4</span></div>
+        <div class="meta-row"><span class="meta-label">COPY TO:</span><span class="meta-value"><span class="redacted">DIRECTOR GENERAL</span> &mdash; <span class="redacted">VAUXHALL LIAISON</span> &mdash; FILE LAMPREY</span></div>
+        <div class="meta-row"><span class="meta-label">DISTRIBUTION:</span><span class="meta-value">RESTRICTED. Not to be reproduced, summarised, or transmitted by any means.</span></div>
+      </div>
+
+      <div class="doc-subject">
+        Re: OC-7 Status Review &mdash; CIPHER Production Series &mdash; Operational Assessment, Cycle 4
+      </div>
+
+      <!-- body -->
+      <div class="doc-body">
+
+        <p>Members of the Executive Committee are advised that this memorandum constitutes the fourth scheduled operational review of the CIPHER production series under the terms of the Halcyon Group's standing mandate. It is submitted in accordance with the renewal conditions attached to Operational Cover Designation Seven (OC-7) and should be read in conjunction with the classified annexe circulated separately under reference <span class="redacted">OCD/84/112/A</span>.</p>
+
+        <div class="section-title">1. &nbsp; Overview of OC-7 Function</div>
+
+        <p>The CIPHER production series continues to perform its primary function effectively. The operational cover designation was established in 1963 following the assessment that certain categories of <span class="redacted">field activity</span> conducted by the <span class="redacted">Directorate</span> required a long-term civilian inoculation strategy. The conclusion reached at that time &mdash; that the most durable form of cover is one that places accurate information in public circulation within a fictional frame &mdash; has been validated by twenty years of operation.</p>
+
+        <p>The principle is straightforward and bears restating for the benefit of newer Committee members: material that is true, when attributed to fiction, becomes unfalsifiable as a factual claim. A member of the public who arrives at an accurate understanding of <span class="redacted">Directorate</span> operations through independent research will find, upon attempting to share that understanding, that they are describing a series of films. They will not be believed. In several documented cases they have not believed themselves.</p>
+
+        <p>This is the function OC-7 was designed to perform. It continues to perform it.</p>
+
+        <div class="section-title">2. &nbsp; Production Series Status</div>
+
+        <p>Seven productions have been released to date under OC-7 cover. The eighth production is currently in post-production and is expected to fulfil its release commitment in 1986. The Committee is advised that the production schedule for the ninth and tenth instalments remains under discussion, with particular consideration given to the <span class="redacted">tradecraft evolution</span> implications of the coming decade.</p>
+
+        <p>The following operational assessments apply to the series to date:</p>
+
+        <div class="numbered-item"><span>i.</span><span><strong>Technical accuracy calibration</strong> has been maintained within acceptable parameters. Productions are required to depict operational methods with sufficient accuracy to establish the inoculation effect, while introducing controlled inaccuracies in timing, geography, and personnel detail sufficient to prevent direct operational identification. The <span class="redacted">Section 13 Equipment</span> working group has confirmed that all depictions in productions one through seven fall within the approved accuracy envelope.</span></div>
+
+        <div class="numbered-item"><span>ii.</span><span><strong>Civilian identification incidents</strong> remain within acceptable frequency. Three incidents of accurate operational identification by civilian researchers have been recorded during the review period. In each case, the subject's conclusions were successfully neutralised by directing their attention, through appropriate channels, to corresponding elements of the production series. All three subjects subsequently revised or abandoned their conclusions. Incident reports are filed under reference <span class="redacted">OCD/ID/79-83</span>.</span></div>
+
+        <div class="numbered-item"><span>iii.</span><span><strong>The Poole incident</strong> (Production 2, 1967) is noted in this review for the purpose of institutional memory. The unauthorised disclosure of the organisational designation by <span class="redacted">D. Poole</span> &mdash; inserted into the production script without authorisation &mdash; was contained within acceptable parameters. Public and critical reception treated the disclosure as a narrative detail of no particular significance. The designation has not been referenced in subsequent productions. <span class="redacted">D. Poole</span>&rsquo;s current status is recorded under file LAMPREY. The Committee is advised that no further action is warranted at this time.</span></div>
+
+        <div class="numbered-item"><span>iv.</span><span><strong>Cover integrity</strong> of the Halcyon Group entity remains intact. Company registration, production financing, and public-facing personnel records have been maintained in accordance with the <span class="redacted">1963 Charter</span>. Routine enquiries from film industry researchers, journalists, and one academic institution during the review period were handled without incident. The Committee is advised that the academic enquiry &mdash; originating from <span class="redacted">University of</span> <span class="redacted">Leeds</span> &mdash; was discontinued after the relevant researcher accepted a position at <span class="redacted">     </span>. No further contact has been received.</span></div>
+
+        <div class="section-title">3. &nbsp; Risk Assessment &mdash; Upcoming Period</div>
+
+        <p>The Committee's attention is drawn to two items of elevated concern for the coming production cycle.</p>
+
+        <p>First, the increasing sophistication of public discourse around intelligence operations &mdash; driven in part by legislative disclosures in the United States and associated press coverage &mdash; raises the possibility that civilian identification incidents will increase in frequency and depth during the coming decade. The OCD assessment is that the production series remains the most effective available mitigation, and that maintaining its public profile and creative quality is itself an operational priority. Any reduction in the series' public credibility would degrade the inoculation effect.</p>
+
+        <p>Second, the casting transition planned for the ninth production raises specific concerns addressed in the classified annexe. The Committee is asked to note that <span class="redacted">talent selection</span> criteria for the Ward role are not solely artistic. The <span class="redacted">vetting requirements</span> attached to OC-7 participation apply to all principal cast and apply for the duration of their engagement. The <span class="redacted">1974 incident</span> arising from <span class="redacted">     </span>&rsquo;s unauthorised discussion of <span class="redacted">location arrangements</span> should be considered instructive.</span></p>
+
+        <div class="section-title">4. &nbsp; Renewal Recommendation</div>
+
+        <p>The Operational Cover Division recommends that OC-7 designation be renewed for a further cycle of no fewer than three productions. The inoculation value of the series increases with duration &mdash; a longer-running fictional franchise provides deeper and more durable cover than any short-term alternative. The Committee's continued support for the production programme, including the financing arrangements described in the classified annexe, is requested.</p>
+
+        <p>All matters arising from this memorandum should be directed to the OCD through secure channels. This document is to be destroyed following the Committee meeting of <span class="redacted">22 March 19</span>84, in accordance with standing document retention policy.</p>
+
+      </div>
+
+      <!-- signature block -->
+      <div class="signature-block">
+        <div>
+          <div class="sig-line">
+            <div class="sig-signed">R. Whitmore</div>
+          </div>
+          <div class="sig-name"><span class="redacted">R. W. WHITMORE</span></div>
+          <div class="sig-title">Director, Operational Cover Division</div>
+          <div class="sig-title">The Halcyon Group</div>
+        </div>
+        <div>
+          <div class="sig-line"></div>
+          <div class="sig-name">FOR THE EXECUTIVE COMMITTEE</div>
+          <div class="sig-title">Received and noted &mdash; <span class="redacted">    /    /84</span></div>
+        </div>
+      </div>
+
+      <div class="stamp-received">
+        Received<br>
+        <span class="redacted">14</span> March <span class="redacted">19</span>84<br>
+        Registry &mdash; OCD
+      </div>
+
+      <div class="page-number">— 1 —</div>
+
+      <!-- ghost text hidden in plain sight -->
+      <div class="ghost-text">FLAG = C321A</div>
+
+    </div><!-- /document-inner -->
+  </div><!-- /document page 1 -->
+
+  <!-- page break -->
+  <div class="page-break">— &nbsp; PAGE BREAK &nbsp; —</div>
+
+  <!-- PAGE 2 -->
+  <div class="document page-2">
+
+    <!-- scan artifacts slightly different on page 2 -->
+    <div class="artifact artifact-fold"></div>
+    <div class="artifact" style="top:55%;left:-10px;right:-10px;height:1px;background:linear-gradient(90deg,transparent,rgba(100,80,50,0.14) 20%,rgba(120,95,60,0.18) 55%,rgba(100,80,50,0.10) 88%,transparent);transform:rotate(0.05deg);"></div>
+    <div class="artifact artifact-stain" style="width:60px;height:45px;top:80px;left:110px;transform:rotate(12deg);opacity:0.5;"></div>
+    <div class="artifact artifact-edge-dark"></div>
+
+    <div class="document-inner">
+
+      <div class="doc-header" style="margin-bottom:20px;">
+        <div class="letterhead-top">The Halcyon Group &mdash; OC-7 / CIPHER &mdash; CLASSIFIED</div>
+        <div style="font-size:11px;color:#5a4a30;letter-spacing:0.15em;">Continuation Sheet &mdash; Ref: OC-7 / CIPHER / CYCLE 4 &mdash; Page 2 of 2</div>
+        <hr class="letterhead-rule-thin" style="margin-top:8px;">
+      </div>
+
+      <div class="doc-body">
+
+        <div class="section-title">Annex A &mdash; Summary of Civilian Identification Incidents (Review Period)</div>
+
+        <p><em>The following is a summary only. Full incident reports are held under restricted access. Distribution of full reports requires OCD Director authorisation.</em></p>
+
+        <div class="numbered-item">
+          <span>1.</span>
+          <span><strong>Incident OCD/ID/79/001.</strong> Subject: <span class="redacted">civilian researcher, academic institution, London</span>. Nature of identification: accurate mapping of Production 3 field locations to <span class="redacted">actual operational sites used during</span> <span class="redacted">1968-1970</span>. Subject had cross-referenced production location records with <span class="redacted">declassified GPO survey material</span>. Mitigation: subject introduced to production archive through <span class="redacted">     </span>; concluded research was coincidental. Subject published paper attributing accuracy to "meticulous location scouting." No further contact.</span>
+        </div>
+
+        <div class="numbered-item">
+          <span>2.</span>
+          <span><strong>Incident OCD/ID/81/003.</strong> Subject: <span class="redacted">journalist, national press</span>. Nature of identification: subject noted anomalous technical accuracy of Production 6 in relation to <span class="redacted">GPO mainframe relay infrastructure</span>. Subject contacted Halcyon Group press office directly. Mitigation: press office response per standard OC-7 protocol. Subject's editor declined to commission further investigation. Article not published.</span>
+        </div>
+
+        <div class="numbered-item">
+          <span>3.</span>
+          <span><strong>Incident OCD/ID/83/007.</strong> Subject: <span class="redacted">former signals technician, retired</span>. Nature of identification: subject recognised specific equipment protocols depicted in Production 6 as consistent with <span class="redacted">classified operational specifications</span> from his former service. Subject raised concern through <span class="redacted">     </span>. Mitigation: subject reminded of <span class="redacted">standing obligations</span> under <span class="redacted">Official Secrets Act</span>. No further action taken. Subject deceased <span class="redacted">     </span> 1983.</span>
+        </div>
+
+        <div class="section-title">Annex B &mdash; Note on File LAMPREY</div>
+
+        <p>The Committee is reminded that file LAMPREY was established following the Poole incident of 1967 to record all instances of OC-7-related disclosure, attempted disclosure, or proximity to disclosure by individuals associated with the production series. The file currently holds <span class="redacted">    </span> entries.</p>
+
+        <p>The Committee is advised that one entry added during the current review period relates to a member of principal cast of Production <span class="redacted">   </span>, who made enquiries during location filming that the OCD assessed as indicating an elevated level of curiosity regarding the operational basis of certain script elements. No disclosure occurred. The individual concerned remains under <span class="redacted">standard monitoring protocol</span>. The entry is recorded for completeness.</p>
+
+        <p>The OCD does not assess the current LAMPREY caseload as presenting unusual risk. The Committee is advised to note, however, that the duration of the production series increases the statistical probability of a significant identification incident over time. This assessment is unchanged from the Cycle 3 review.</p>
+
+        <div class="section-title">Annex C &mdash; Financing Note</div>
+
+        <p>The financing arrangements for the production series continue to operate through the structure established in <span class="redacted">1963</span>. Commercial revenue from the production series &mdash; theatrical receipts, ancillary rights, international distribution &mdash; contributes to the operational budget of the Halcyon Group entity and reduces the net cost of OC-7 to the <span class="redacted">Directorate</span>. The Committee is advised that Productions 5, 6, and 7 have collectively returned a <span class="redacted">net operational surplus</span>, meaning that OC-7 has, during this period, been self-financing. This is considered a satisfactory outcome and is noted for the record.</p>
+
+        <p>Full financing details are held by the <span class="redacted">OCD Finance Controller</span> and are available to Committee members on request through secure channels only.</p>
+
+        <!-- handwritten margin note -->
+        <div style="border-left: 2px solid #1a3060; margin: 20px 0 20px 60%; padding-left: 12px; transform: rotate(0.5deg);">
+          <div class="handwritten-note">
+            Self-financing.<br>
+            <span class="underline-hand">Remarkable.</span><br>
+            &mdash; noted &mdash;
+          </div>
+        </div>
+
+        <p>This annexe is to be treated as part of the classified continuation of the memorandum dated 14 March <span class="redacted">19</span>84 and is subject to the same destruction instruction.</p>
+
+        <div style="margin-top:32px; border-top: 1px solid #8a7a5a; padding-top:14px; font-size:11.5px; color:#3a3020; line-height:1.8;">
+          <strong>DOCUMENT ENDS</strong><br>
+          Classification: RESTRICTED &mdash; OC-7 EYES ONLY<br>
+          Destruction due: <span class="redacted">22 March 1984</span> &mdash; Method: <span class="redacted">     </span><br>
+          Archive copy held: FILE LAMPREY &mdash; OCD Registry
+        </div>
+
+      </div>
+
+      <div class="page-number" style="margin-top:32px;">— 2 —</div>
+
+      <!-- second ghost line, very faint, only visible on highlight -->
+      <div class="ghost-text" style="color:#ddd4ba; font-size:9px; margin-top:20px; letter-spacing:0.12em;">
+        D. Poole &mdash; terminated from OC-7 production, February 1967. Reason: unauthorised disclosure. Current status: see file LAMPREY.
+      </div>
+
+    </div><!-- /document-inner -->
+  </div><!-- /document page 2 -->
+
+</div><!-- /viewer -->
+
+</body>
+</html>

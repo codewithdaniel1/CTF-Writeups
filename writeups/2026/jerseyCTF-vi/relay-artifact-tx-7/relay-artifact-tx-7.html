@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f2ea" />
+  <meta name="description" content="JerseyCTF VI cryptography walkthrough: exploit RSA prime reuse with a greatest common divisor and decrypt the relay artifact." />
+  <meta property="og:title" content="Relay Artifact TX-7 | JerseyCTF VI Writeup" />
+  <meta property="og:description" content="Recover a reused RSA prime from a diagnostic value, reconstruct the private exponent, and decrypt the message." />
+  <meta property="og:type" content="article" />
+  <title>Relay Artifact TX-7 | JerseyCTF VI Writeup | Daniel Peng</title>
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../styles.css?v=jerseyctf-writeups" />
+  <script src="../../../../script.js?v=20261021a" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="https://codewithdaniel1.github.io/index.html" aria-label="Daniel Peng, home"><span class="brand-mark">dp<span class="brand-period">.</span></span><span class="brand-name">Daniel Peng</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="https://codewithdaniel1.github.io/index.html">Home</a><a href="https://codewithdaniel1.github.io/project.html">Project</a><a href="https://codewithdaniel1.github.io/research.html">Research</a><a href="https://codewithdaniel1.github.io/ctf.html">CTF</a></nav>
+    </div>
+  </header>
+  <main class="inner-main wrap prose" id="main">
+    <a class="back-link" href="https://codewithdaniel1.github.io/competitions/jerseyctf-vi.html#writeups" data-back-to-ctf>← Back to JerseyCTF VI writeups</a>
+    <header class="inner-hero">
+      <p class="section-index">CTF WRITEUP / JERSEYCTF VI</p>
+      <div>
+        <h1>Relay Artifact TX-7<span class="period">.</span></h1>
+        <p class="lead">A diagnostic value shares a prime factor with an RSA modulus. One greatest common divisor turns the public key material into the private key needed to read the relay.</p>
+        <div class="article-meta"><span>Cryptography · RSA</span><span>JerseyCTF VI</span><span>April 18–19, 2026</span></div>
+      </div>
+    </header>
+
+    <section class="inner-section" id="challenge" aria-labelledby="challenge-title">
+      <h2 id="challenge-title">The challenge</h2>
+      <div class="section-content">
+        <p>Relay node TX-7 was recovered from a decommissioned corridor between the outer and inner system. Diagnostics show it prepared a final transmission but never sent it - the relay restrained itself. Reconstruct what TX-7 was trying to say; its last unsent message may point toward the only viable route inward.</p>
+        <div class="writeup-downloads">
+          <a class="under-link" href="assets/original/03-relay-artifact-tx-7.zip" download>Original challenge archive</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="recover-key" aria-labelledby="recover-key-title">
+      <h2 id="recover-key-title">Recover the private key</h2>
+      <div class="section-content">
+        <p>Let <code>n</code> be the RSA modulus and <code>diagnostic</code> the supplied value. Their greatest common divisor exposes one prime. The other factor follows by division:</p>
+        <pre><code>from math import gcd
+
+p = gcd(n, diagnostic)
+assert 1 &lt; p &lt; n
+q = n // p</code></pre>
+        <p>With both primes, compute Euler’s totient and invert the public exponent <code>e</code> to obtain the private exponent <code>d</code>:</p>
+        <pre><code>phi = (p - 1) * (q - 1)
+d = pow(e, -1, phi)</code></pre>
+        <p>This is the standard RSA key relation. The supplied integers are used directly; the calculation does not search the key space.</p>
+      </div>
+    </section>
+
+    <section class="inner-section" id="decrypt" aria-labelledby="decrypt-title">
+      <h2 id="decrypt-title">Decrypt the relay</h2>
+      <div class="section-content">
+        <p>Convert the ciphertext bytes to an integer, apply RSA decryption, then convert the result back to bytes. The modulus size determines the fixed-width block. It begins with PKCS#1 v1.5 encryption padding (<code>00 02</code>), so read the message after the next zero-byte separator:</p>
+        <pre><code>ciphertext_int = int.from_bytes(ciphertext, "big")
+message_int = pow(ciphertext_int, d, n)
+block_size = (n.bit_length() + 7) // 8
+block = message_int.to_bytes(block_size, "big")
+assert block.startswith(b"\x00\x02")
+plaintext = block[2:].split(b"\x00", 1)[1]
+print(plaintext.decode())</code></pre>
+        <p>The plaintext reads:</p>
+        <div class="writeup-callout">
+          <p><strong>Relay Transmission — UNSENT</strong></p>
+          <p>The restraint was not ordered.<br />It was negotiated.</p>
+          <p>Direct control provokes resistance.<br />Indirect action is tolerated.</p>
+          <p>Partial restoration maintained system stability.</p>
+          <p>Do not restore everything.</p>
+        </div>
+        <p>The message ends with the flag:</p>
+        <pre class="writeup-flag"><code>JCTF{INDIRECT_CONTROL_IS_THE_ONLY_CONTROL}</code></pre>
+        <div class="writeup-downloads">
+          <a class="under-link" href="assets/recovered/relay-artifact-tx-7-transmission.txt" download>Recovered relay transmission</a>
+          <a class="under-link" href="assets/recovered/relay-artifact-tx-7-flag.txt" download>Recovered flag file</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section" id="takeaway" aria-labelledby="takeaway-title">
+      <h2 id="takeaway-title">Takeaway</h2>
+      <div class="section-content">
+        <p>RSA depends on keeping the prime factors of <code>n</code> secret. If another published value leaks a factor, the private exponent can be reconstructed and textbook RSA decryption becomes possible. A quick GCD check can therefore reveal a critical key-generation failure.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>Daniel Peng · New York</span><a href="https://codewithdaniel1.github.io/competitions/jerseyctf-vi.html#writeups" data-back-to-ctf>← Back to JerseyCTF VI writeups</a></div></footer>
+</body>
+</html>
