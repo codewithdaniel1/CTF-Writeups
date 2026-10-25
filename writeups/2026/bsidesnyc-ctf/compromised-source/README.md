@@ -6,6 +6,8 @@ A Sentinel talk-page discussion contains a user whose expertise goes beyond ordi
 
 [View the styled writeup on my website](https://codewithdaniel1.github.io/writeups/2026/bsidesnyc-ctf/compromised-source/compromised-source.html)
 
+CipherWiki links in this writeup open the rendered archive on my website. The original HTML source remains in this repository.
+
 ## The challenge
 
 “Agent,
@@ -16,13 +18,13 @@ They are talking about Sentinel.
 
 Find the source.”
 
-Start at the [archived CipherWiki website](../classified/assets/original/cipher-wiki/index.html). This local copy preserves the challenge pages and their supporting files.
+Start at the [archived CipherWiki website](https://codewithdaniel1.github.io/writeups/2026/bsidesnyc-ctf/classified/assets/original/cipher-wiki/index.html). This local copy preserves the challenge pages and their supporting files.
 
 Original challenge URL: [ctf313.com/cipher-wiki/index.html](https://ctf313.com/cipher-wiki/index.html).
 
 ## Find the source of the leak
 
-Open the [Sentinel article](../classified/assets/original/cipher-wiki/org/sentinel.html) and follow its Talk tab to the [Sentinel talk page](../classified/assets/original/cipher-wiki/talk/org_sentinel.html). Review the discussion about the numbering of Section 13. In the post explaining how real intelligence sections are organized, `Morthwaite` speaks with oddly specific confidence about how intelligence functions are divided and why a technical section might sit outside the usual numbering.
+Open the [Sentinel article](https://codewithdaniel1.github.io/writeups/2026/bsidesnyc-ctf/classified/assets/original/cipher-wiki/org/sentinel.html) and follow its Talk tab to the [Sentinel talk page](https://codewithdaniel1.github.io/writeups/2026/bsidesnyc-ctf/classified/assets/original/cipher-wiki/talk/org_sentinel.html). Review the discussion about the numbering of Section 13. In the post explaining how real intelligence sections are organized, `Morthwaite` speaks with oddly specific confidence about how intelligence functions are divided and why a technical section might sit outside the usual numbering.
 
 That knowledge is the tell. The poster is not just speculating about the fictional organization; the post contains a second clue in an element that is hidden from the rendered page with the CSS class `null`.
 

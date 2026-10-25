@@ -4,6 +4,8 @@ Challenge writeups, original files, and recovered artifacts from competitions I 
 
 The `writeups/2026/` tree matches the folder structure on [my website](https://codewithdaniel1.github.io/ctf.html). Each challenge folder contains a GitHub-readable `README.md`, the styled HTML writeup, and its available assets.
 
+GitHub displays `.html` files as source code. Read the walkthroughs here as rendered Markdown; links to CipherWiki pages open the interactive archive on my website.
+
 ## 2026
 
 ### BSidesNYC CTF
